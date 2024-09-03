@@ -139,20 +139,102 @@
 
 
 
+#semana 2
+
 
 #Escreva um programa para aprovar o empréstimo bancário para compra de uma
 #casa. O programa vai perguntar o valor da casa, o salário do comprador e em
 #quantos anos ele vai pagar. Calcule o valor da prestação mensal sabendo que ela
 #não pode exceder 30% do salário ou então o empréstimo será negado
 
-valor_casa = int(input("qual o valor da casa? "))
-salario_comprador = int(input("qual o salario do comprador? "))
-anos_casa = int(input("em quantos anos vai pagar a casa? "))
 
-prestacao_mensal = (valor_casa / (anos_casa * 12))
-parcela_minima = salario_comprador * 0.3
+# valor_casa = int(input("qual o valor da casa? "))
+# salario_comprador = int(input("qual o salario do comprador? "))
+# anos_casa = int(input("em quantos anos vai pagar a casa? "))
+# 
+# prestacao_mensal = (valor_casa / (anos_casa * 12))
+# parcela_minima = salario_comprador * 0.3
+# 
+# if parcela_minima > prestacao_mensal:
+#     print("o comprador pode comprar a casa.")
+# else:
+#     print("o comprador não pdoe comprar a casa.")
 
-if parcela_minima > prestacao_mensal:
-    print("o comprador pode comprar a casa.")
-else:
-    print("o comprador não pdoe comprar a casa.")
+
+
+
+
+#Elabore um programa que calcule o valor a ser pago por um produto, seu
+# programa deve perguntar o valor do produto e a condição de pagamento.
+# Considere:
+# a. à vista (dinheiro ou cheque) – 10% de desconto
+# b. 1x no cartão – 5% de desconto
+# c. 2x cartão – preço normal
+# d. 3x ou mais no cartão - 20% de juros
+
+
+
+# valor_produto = float(input("qual o valor do produto? "))
+# condicao_pagamento = input("qual a condicao do pagamento? ").lower()
+# 
+# if condicao_pagamento == "a vista no dinheiro/cheque":
+#     valor_produto1 = valor_produto * 0.9
+#     
+# elif condicao_pagamento == "1x no cartao":
+#     valor_produto1 = valor_produto * 0.95
+# 
+# elif condicao_pagamento == "2x no cartao":
+#     valor_produto1 = valor_produto
+#     
+# else:
+#     valor_produto1 = valor_produto * 1.2
+#     
+# print(f"valor = {valor_produto1}")
+
+
+
+#exemplos da aula
+
+temperatura = float(input("qual a temperatura? "))
+unidade_inicial = input("qual a unidade? ").upper()
+unidade_final = input("qual a unidade para conversao? ").upper()
+
+match (unidade_inicial):
+
+    case "C":
+        match (unidade_final):
+            case "K":
+                print(temperatura + 273.15)
+            case "F":
+                print(temperatura * 1.8 + 32)
+            case _:
+                print(f"a unidade {unidade_final} nao existe")
+        
+    case "F":
+        match (unidade_final):
+            case "C":
+                print((temperatura - 32) / 1.8 )
+            case "K":
+                print((temperatura - 32) * 5/9 + 273.25)
+            case _:
+                print(f"a unidade {unidade_final} nao existe")
+        
+    case "K":
+        match (unidade_final):
+            case "C":
+                print(temperatura - 273.15)
+            case "F":
+                print((temperatura - 273.15) * 9 / 5 + 32)
+            case _:
+                print(f"a unidade {unidade_final} nao existe")
+
+    case _:
+        print("unidade de temperatura incorreta")
+
+    
+
+
+
+
+
+
