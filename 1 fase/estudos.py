@@ -26,42 +26,42 @@
 
 #exercicio areas
 
-#(a, b, c) = map(float, input().split(' '))
-
-
-#triangulo = (a * c) / 2
-#circulo = (3.14159 * c * c)
-#trapezio = ((a + b) * c) / 2
-#quadrado = b * b
-#retangulo = a * b
-
-#print(f"TRIANGULO: {triangulo:.3f}")
-#print(f"CIRCULO: {circulo:.3f}")
-#print(f"TRAPEZIO: {trapezio:.3F}")
-#print(f"QUADRADO: {quadrado:.3f}")
-#print(f"TRIANGULO: {retangulo:.3f}")
-
-
-
-#exercicio distancia entre dois pontos
-
-#(x1, y1) = map(float, input().split(' '))
-#(x2, y2) = map(float, input().split(' '))
-
-#distancia = ((x2 - x1)*2 + (y2 - y1)2)*0.5
-
-#print(f"{distancia:.4f}")
+# (a, b, c) = map(float, input().split(' '))
+# 
+# 
+# triangulo = (a * c) / 2
+# circulo = (3.14159 * c * c)
+# trapezio = ((a + b) * c) / 2
+# quadrado = b * b
+# retangulo = a * b
+# 
+# print(f"TRIANGULO: {triangulo:.2f}")
+# print(f"CIRCULO: {circulo:.4f}")
+# print(f"TRAPEZIO: {trapezio:.4F}")
+# print(f"QUADRADO: {quadrado:.87f}")
+# print(f"TRIANGULO: {retangulo:.36f}")
 
 
 
-#exercicio tempo
+# exercicio distancia entre dois pontos
 
-#tempo = int(input())
+# (x1, y1) = map(float, input().split(' '))
+# (x2, y2) = map(float, input().split(' '))
+# 
+# distancia = ((x2 - x1)*2 + (y2 - y1)2)*0.5
+# 
+# print(f"{distancia:.2f}")
 
-#horas = tempo // 3600
-#resto = tempo % 3600
-#minutos = resto // 60
-#segundo = resto % 60 
+
+
+# exercicio tempo
+
+# tempo = int(input())
+
+# horas = tempo // 3600
+# resto = tempo % 3600
+# minutos = resto // 60
+# segundo = resto % 60 
 
 
 #print(f"{horas}:{minutos}:{segundo}")
@@ -194,44 +194,93 @@
 
 
 #exemplos da aula
-
-temperatura = float(input("qual a temperatura? "))
-unidade_inicial = input("qual a unidade? ").upper()
-unidade_final = input("qual a unidade para conversao? ").upper()
-
-match (unidade_inicial):
-
-    case "C":
-        match (unidade_final):
-            case "K":
-                print(temperatura + 273.15)
-            case "F":
-                print(temperatura * 1.8 + 32)
-            case _:
-                print(f"a unidade {unidade_final} nao existe")
-        
-    case "F":
-        match (unidade_final):
-            case "C":
-                print((temperatura - 32) / 1.8 )
-            case "K":
-                print((temperatura - 32) * 5/9 + 273.25)
-            case _:
-                print(f"a unidade {unidade_final} nao existe")
-        
-    case "K":
-        match (unidade_final):
-            case "C":
-                print(temperatura - 273.15)
-            case "F":
-                print((temperatura - 273.15) * 9 / 5 + 32)
-            case _:
-                print(f"a unidade {unidade_final} nao existe")
-
-    case _:
-        print("unidade de temperatura incorreta")
+#
+# temperatura = float(input("qual a temperatura? "))
+# unidade_inicial = input("qual a unidade? ").upper()
+# unidade_final = input("qual a unidade para conversao? ").upper()
+# 
+# match (unidade_inicial):
+# 
+#     case "C":
+#         match (unidade_final):
+#             case "K":
+#                 print(temperatura + 273.15)
+#             case "F":
+#                 print(temperatura * 1.8 + 32)
+#             case _:
+#                 print(f"a unidade {unidade_final} nao existe")
+#         
+#     case "F":
+#         match (unidade_final):
+#             case "C":
+#                 print((temperatura - 32) / 1.8 )
+#             case "K":
+#                 print((temperatura - 32) * 5/9 + 273.25)
+#             case _:
+#                 print(f"a unidade {unidade_final} nao existe")
+#         
+#     case "K":
+#         match (unidade_final):
+#             case "C":
+#                 print(temperatura - 273.15)
+#             case "F":
+#                 print((temperatura - 273.15) * 9 / 5 + 32)
+#             case _:
+#                 print(f"a unidade {unidade_final} nao existe")
+# 
+#     case _:
+#         print("unidade de temperatura incorreta")
 
     
+    
+    
+
+# 3) Desenvolva um algoritmo que leia o peso e altura de uma pessoa, calcule seu IMC
+# e mostre seu status de acordo com:
+# Abaixo de 18,5 – abaixo do peso
+# Entre 18.5 e 25 – peso ideal
+# Entre 25 e 30 - sobrepeso
+# Entre 30 e 40 - obesidade
+# Acima de 40 - obesidade mórbida
+# Para o cálculo do IMC, considere: IMC = peso / (altura x altura)
+#
+#
+# altura = float(input("sua altura: "))
+# peso = float(input("seu peso: "))
+# 
+# imc = peso / ((altura / 100) * (altura / 100))
+# 
+# if imc < 18.5:
+#     print(f"{imc:.2f} - abaixo do peso")
+# elif imc < 25:
+#     print(f"{imc:.2f} - peso ideal")
+# elif imc < 30:
+#     print(f"{imc:.2f} - sobrepeso")
+# elif imc < 40:
+#     print(f"{imc:.2f} - obesidade")
+# else:
+#     print(f"{imc:.2f} - obesidade")
+
+
+
+
+# 4) Faça um programa que leia 3 notas de um aluno, calcule sua média e mostre seu
+# conceito final conforme a indicação abaixo:
+# Abaixo de 5 – Reprovado
+# Entre 5 e menor que 7 – Em recuperação
+# Igual ou maior que 7 – Aprovado
+# 
+# 
+# (a, b, c) = map(float, input().split(' '))
+# 
+# media = (a + b + c) / 3
+# 
+# if media < 5:
+#     print(f"{media:.2f} - reprovado")
+# elif media < 7:
+#     print(f"{media:.2f} - em recuperação")
+# else:
+#     print(f"{media:.2f} - aprovado")
 
 
 
