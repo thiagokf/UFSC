@@ -140,3 +140,19 @@
 
 
 
+#Escreva um programa para aprovar o empréstimo bancário para compra de uma
+#casa. O programa vai perguntar o valor da casa, o salário do comprador e em
+#quantos anos ele vai pagar. Calcule o valor da prestação mensal sabendo que ela
+#não pode exceder 30% do salário ou então o empréstimo será negado
+
+valor_casa = int(input("qual o valor da casa? "))
+salario_comprador = int(input("qual o salario do comprador? "))
+anos_casa = int(input("em quantos anos vai pagar a casa? "))
+
+prestacao_mensal = (valor_casa / (anos_casa * 12))
+parcela_minima = salario_comprador * 0.3
+
+if parcela_minima > prestacao_mensal:
+    print("o comprador pode comprar a casa.")
+else:
+    print("o comprador não pdoe comprar a casa.")
