@@ -307,7 +307,9 @@
 
 
 #tipos de triangulos
-#Leia 3 valores de ponto flutuante A, B e C e ordene-os em ordem decrescente, de modo que o lado A representa o maior dos 3 lados. A seguir, determine o tipo de triângulo que estes três lados formam, com base nos seguintes casos, sempre escrevendo uma mensagem adequada:
+#Leia 3 valores de ponto flutuante A, B e C e ordene-os em ordem decrescente,
+#de modo que o lado A representa o maior dos 3 lados. A seguir, determine o tipo de triângulo 
+#que estes três lados formam, com base nos seguintes casos, sempre escrevendo uma mensagem adequada:
 
 #(x, y, z) = map(float, input().split(' '))
 
@@ -342,36 +344,129 @@
 
 #exercicio 1061
 
-dia_inicio = int(input("Dia "))
-(hh, mm, ss) = map(int, input().split(' '))
+# dia_inicio = int(input("Dia "))
+# (hh, mm, ss) = map(int, input().split(':'))
+# 
+# dia_fim = int(input("Dia "))
+# (hh2, mm2, ss2) = map(int, input().split(':'))
+# 
+# dias_evento = (dia_fim - dia_inicio) 
+# 
+# horas_evento = (hh2 - hh)
+# if (horas_evento < 0):
+#     horas_evento = 24 + horas_evento
+#     dias_evento = dias_evento - 1
+#     
+# minutos_evento = (mm2 - mm)
+# if (minutos_evento < 0):
+#     minutos_evento = 60 + minutos_evento
+#     horas_evento = horas_evento - 1
+#     
+# segundos_evento = (ss2 - ss)
+# if (segundos_evento < 0):
+#     segundos_evento = 60 + segundos_evento
+#     minutos_evento = minutos_evento - 1
+# if (dias_evento <= 0):
+#     dias = 0
+# 
+# 
+# print(f"{dias_evento} dia(s)")
+# print(f"{horas_evento} hora(s)")
+# print(f"{minutos_evento} minuto(s)")
+# print(f"{segundos_evento} segundo(s)")
 
-dia_fim = int(input("Dia "))
-(hh2, mm2, ss2) = map(int, input().split(' '))
-
-dias_evento = (dia_fim - dia_inicio) 
-
-horas_evento = (hh2 - hh)
-if (horas_evento < 0):
-    hora_evento = 24 + hora_evento
-    dias_evento = dias_evento - 1
-    
-minutos_evento = (mm2 - mm)
-if (minutos_evento < 0):
-    minutos_evento = 60 + minutos_evento
-    horas_evento = horas_evento - 1
-    
-segundos_evento = (ss2 - ss)
-if (segundos_evento < 0):
-    segundos_evento = 60 + segundos_evento
-    minutos_evento = minutos_evento - 1
-if (dias_evento <= 0):
-    dias = 0
 
 
-print(f"{dias_evento} dia(s)")
-print(f"{horas_evento} hora(s)")
-print(f"{minutos_evento} minuto(s)")
-print(f"{segundos_evento} segundo(s)")
+#exercicio DDD
+#Leia um número inteiro que representa um código de DDD para discagem interurbana. 
+#Em seguida, informe à qual cidade o DDD pertence, considerando a tabela abaixo:
+
+# ddd = int(input())
+# 
+# if ddd == 61:
+#     print("Brasilia")
+# elif ddd == 71:
+#     print("Salvador")
+# elif ddd == 11:
+#     print("Sao Paulo")
+# elif ddd == 21:
+#     print("Rio de Janeiro")
+# elif ddd == 32:
+#     print("Juiz de Fora")
+# elif ddd == 19:
+#     print("Campinas")
+# elif ddd == 27:
+#     print("Vitoria")
+# elif ddd == 31:
+#     print("Belo Horizonte")
+# else:
+#     print("DDD nao cadastrado")
+
+
+
+#exercicio MES
+#Leia um valor inteiro entre 1 e 12, inclusive. Correspondente a este valor, 
+#deve ser apresentado como resposta o mês do ano por extenso, em inglês, com a primeira letra maiúscula.
+
+# mes = int(input())
+# 
+# match (mes):
+#     case 1:
+#         print("January")
+#     case 2:
+#         print("February")
+#     case 3:
+#         print("March")
+#     case 4:
+#         print("April")
+#     case 5:
+#         print("May")
+#     case 6:
+#         print("June")
+#     case 7:
+#         print("July")
+#     case 8:
+#         print("August")
+#     case 9:
+#         print("September")
+#     case 10:
+#         print("October")
+#     case 11:
+#         print("November")
+#     case 12:
+#         print("December")
+#     case _:
+#         print("isso nao é um mes")
+
+
+
+
+#exercicio Formuda de Bhaskara
+#Leia 3 valores de ponto flutuante e efetue o cálculo das raízes da equação de Bhaskara. 
+#Se não for possível calcular as raízes, mostre a mensagem correspondente “Impossivel calcular”, 
+#caso haja uma divisão por 0 ou raiz de numero negativo.
+
+(a, b, c) = map(float, input().split(' '))
+
+delta = (b**2 - 4 * a * c)
+raiz1 = (-b + (delta)**0.5) / (2 * a)
+raiz2 = (-b - (delta)**0.5) / (2 * a)
+
+if delta <= 0:
+    print("Impossivel calcular")
+else:
+    print(f"R1 = {raiz1:.5f}")
+    print(f"R2 = {raiz2:.5f}")
+
+
+
+
+
+
+
+
+
+
 
 
 
