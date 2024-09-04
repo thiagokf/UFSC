@@ -309,32 +309,69 @@
 #tipos de triangulos
 #Leia 3 valores de ponto flutuante A, B e C e ordene-os em ordem decrescente, de modo que o lado A representa o maior dos 3 lados. A seguir, determine o tipo de triângulo que estes três lados formam, com base nos seguintes casos, sempre escrevendo uma mensagem adequada:
 
-(x, y, z) = map(float, input().split(' '))
+#(x, y, z) = map(float, input().split(' '))
 
-if (x >= y) and (x >= z):
-    a = x
-    b = y
-    c = z
-if (y >= x) and (y >= z):
-    a = y
-    b = x 
-    c = z
-if (z >= x) and (z >= z):
-    a = z
-    b = x
-    c = y
+#if (x >= y) and (x >= z):
+ #   a = x
+#    b = y
+#    c = z
+#if (y >= x) and (y >= z):
+  #  a = y
+ #   b = x 
+#    c = z
+#if (z >= x) and (z >= z):
+   # a = z
+  #  b = x
+ #   c = y
 
 
-if a >= b + c:
-    print("NAO FORMA TRIANGULO")
-elif (a**2 == b**2 + c**2):
-    print("TRIANGULO RETANGULO")
-elif (a**2 > b**2 + c**2):
-    print("TRIANGULO OBTUSANGULO")
-elif (a**2 < b**2 + c**2):
-    print("TRIANGULO ACUTANGULO")
-if a == b == c:
-    print("TRIANGULO EQUILATERO")
-elif a == b or b == c or a == c:
-    print("TRIANGULO ISOSCELES")
+#if a >= b + c:
+#    print("NAO FORMA TRIANGULO")
+#elif (a**2 == b**2 + c**2):
+#    print("TRIANGULO RETANGULO")
+#elif (a**2 > b**2 + c**2):
+ #   print("TRIANGULO OBTUSANGULO")
+#elif (a**2 < b**2 + c**2):
+#    print("TRIANGULO ACUTANGULO")
+#if a == b == c:
+#    print("TRIANGULO EQUILATERO")
+#elif a == b or b == c or a == c:
+#    print("TRIANGULO ISOSCELES")
+
+
+
+#exercicio 1061
+
+dia_inicio = int(input("Dia "))
+(hh, mm, ss) = map(int, input().split(' '))
+
+dia_fim = int(input("Dia "))
+(hh2, mm2, ss2) = map(int, input().split(' '))
+
+dias_evento = (dia_fim - dia_inicio) 
+
+horas_evento = (hh2 - hh)
+if (horas_evento < 0):
+    hora_evento = 24 + hora_evento
+    dias_evento = dias_evento - 1
+    
+minutos_evento = (mm2 - mm)
+if (minutos_evento < 0):
+    minutos_evento = 60 + minutos_evento
+    horas_evento = horas_evento - 1
+    
+segundos_evento = (ss2 - ss)
+if (segundos_evento < 0):
+    segundos_evento = 60 + segundos_evento
+    minutos_evento = minutos_evento - 1
+if (dias_evento <= 0):
+    dias = 0
+
+
+print(f"{dias_evento} dia(s)")
+print(f"{horas_evento} hora(s)")
+print(f"{minutos_evento} minuto(s)")
+print(f"{segundos_evento} segundo(s)")
+
+
 
