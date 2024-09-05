@@ -309,32 +309,217 @@
 #tipos de triangulos
 #Leia 3 valores de ponto flutuante A, B e C e ordene-os em ordem decrescente, de modo que o lado A representa o maior dos 3 lados. A seguir, determine o tipo de triângulo que estes três lados formam, com base nos seguintes casos, sempre escrevendo uma mensagem adequada:
 
-(x, y, z) = map(float, input().split(' '))
+# (x, y, z) = map(float, input().split(' '))
+# 
+# if (x >= y) and (x >= z):
+#     a = x
+#     b = y
+#     c = z
+# if (y >= x) and (y >= z):
+#     a = y
+#     b = x 
+#     c = z
+# if (z >= x) and (z >= z):
+#     a = z
+#     b = x
+#     c = y
+# 
+# 
+# if a >= b + c:
+#     print("NAO FORMA TRIANGULO")
+# elif (a**2 == b**2 + c**2):
+#     print("TRIANGULO RETANGULO")
+# elif (a**2 > b**2 + c**2):
+#     print("TRIANGULO OBTUSANGULO")
+# elif (a**2 < b**2 + c**2):
+#     print("TRIANGULO ACUTANGULO")
+# if a == b == c:
+#     print("TRIANGULO EQUILATERO")
+# elif a == b or b == c or a == c:
+#     print("TRIANGULO ISOSCELES")
+    
+    
+#exercicio 1061
 
-if (x >= y) and (x >= z):
-    a = x
-    b = y
-    c = z
-if (y >= x) and (y >= z):
-    a = y
-    b = x 
-    c = z
-if (z >= x) and (z >= z):
-    a = z
-    b = x
-    c = y
+dia_inicio = int(input().split()[1])
+(hh, mm, ss) = map(int, input().split(':'))
+
+dia_fim = int(input().split()[1])
+(hh2, mm2, ss2) = map(int, input().split(':'))
+
+min_seg = 60
+hora_seg = 3600
+dia_seg = 86400
+
+ini = ss + (mm*min_seg) + (hh*hora_seg) + (dia_inicio*dia_seg)
+fim = ss2 + (mm2*min_seg) + (hh2*hora_seg) + (dia_fim*dia_seg)
+
+if ini < fim:
+    tempo = fim - ini
+    dias_evento = (tempo // 86400)
+    tempo = tempo%dia_seg
+    horas_evento = (tempo // 3600)
+    tempo = tempo%hora_seg
+    minutos_evento = (tempo // 60)
+    tempo = tempo%min_seg
+    segundos_evento = tempo
 
 
-if a >= b + c:
-    print("NAO FORMA TRIANGULO")
-elif (a**2 == b**2 + c**2):
-    print("TRIANGULO RETANGULO")
-elif (a**2 > b**2 + c**2):
-    print("TRIANGULO OBTUSANGULO")
-elif (a**2 < b**2 + c**2):
-    print("TRIANGULO ACUTANGULO")
-if a == b == c:
-    print("TRIANGULO EQUILATERO")
-elif a == b or b == c or a == c:
-    print("TRIANGULO ISOSCELES")
+print(f"{dias_evento} dia(s)")
+print(f"{horas_evento} hora(s)")
+print(f"{minutos_evento} minuto(s)")
+print(f"{segundos_evento} segundo(s)")
+
+#codigo cola
+
+# StrDi = input().split()
+# StrHi = input().split()
+# StrDf = input().split()
+# StrHf = input().split()
+# di,df = int(StrDi[1]),int(StrDf[1])
+# hhi,mmi,ssi = int(StrHi[0]),int(StrHi[2]),int(StrHi[4])
+# hhf,mmf,ssf = int(StrHf[0]),int(StrHf[2]),int(StrHf[4])
+# 
+# min_seg = 60
+# hora_seg = 3600
+# dia_seg = 86400
+# 
+# ini = ssi + mmi*min_seg + hhi*hora_seg + di*dia_seg
+# fim = ssf + mmf*min_seg + hhf*hora_seg + df*dia_seg
+# 
+# if ini < fim:
+#     t = fim - ini
+#     W = int(t/dia_seg)
+#     t = t%dia_seg
+#     X = int(t/hora_seg)
+#     t = t%hora_seg
+#     Y = int(t/min_seg)
+#     t = t%min_seg
+#     Z = t
+# 
+# print("%d dia(s)" %W)
+# print("%d hora(s)" %X)
+# print("%d minuto(s)" %Y)
+# print("%d segundo(s)" %Z)
+
+
+#cogido incial
+
+# dia_inicio = int(input("Dia "))
+# (hh, mm, ss) = map(int, input().split(':'))
+# 
+# dia_fim = int(input("Dia "))
+# (hh2, mm2, ss2) = map(int, input().split(':'))
+# 
+# dias_evento = (dia_fim - dia_inicio) 
+# 
+# horas_evento = (hh2 - hh)
+# if (horas_evento < 0):
+#     horas_evento = 24 + horas_evento
+#     dias_evento = dias_evento - 1
+#     
+# minutos_evento = (mm2 - mm)
+# if (minutos_evento < 0):
+#     minutos_evento = 60 + minutos_evento
+#     horas_evento = horas_evento - 1
+#     
+# segundos_evento = (ss2 - ss)
+# if (segundos_evento < 0):
+#     segundos_evento = 60 + segundos_evento
+#     minutos_evento = minutos_evento - 1
+# if (dias_evento <= 0):
+#     dias = 0
+# 
+# 
+# print(f"{dias_evento} dia(s)")
+# print(f"{horas_evento} hora(s)")
+# print(f"{minutos_evento} minuto(s)")
+# print(f"{segundos_evento} segundo(s)")
+
+
+#exercicio DDD
+#Leia um número inteiro que representa um código de DDD para discagem interurbana. 
+#Em seguida, informe à qual cidade o DDD pertence, considerando a tabela abaixo:
+
+# ddd = int(input())
+# 
+# if ddd == 61:
+#     print("Brasilia")
+# elif ddd == 71:
+#     print("Salvador")
+# elif ddd == 11:
+#     print("Sao Paulo")
+# elif ddd == 21:
+#     print("Rio de Janeiro")
+# elif ddd == 32:
+#     print("Juiz de Fora")
+# elif ddd == 19:
+#     print("Campinas")
+# elif ddd == 27:
+#     print("Vitoria")
+# elif ddd == 31:
+#     print("Belo Horizonte")
+# else:
+#     print("DDD nao cadastrado")
+
+
+
+#exercicio MES
+#Leia um valor inteiro entre 1 e 12, inclusive. Correspondente a este valor, 
+#deve ser apresentado como resposta o mês do ano por extenso, em inglês, com a primeira letra maiúscula.
+
+# mes = int(input())
+# 
+# match (mes):
+#     case 1:
+#         print("January")
+#     case 2:
+#         print("February")
+#     case 3:
+#         print("March")
+#     case 4:
+#         print("April")
+#     case 5:
+#         print("May")
+#     case 6:
+#         print("June")
+#     case 7:
+#         print("July")
+#     case 8:
+#         print("August")
+#     case 9:
+#         print("September")
+#     case 10:
+#         print("October")
+#     case 11:
+#         print("November")
+#     case 12:
+#         print("December")
+#     case _:
+#         print("isso nao é um mes")
+
+
+
+
+# exercicio Formuda de Bhaskara
+#Leia 3 valores de ponto flutuante e efetue o cálculo das raízes da equação de Bhaskara. 
+#Se não for possível calcular as raízes, mostre a mensagem correspondente “Impossivel calcular”, 
+#caso haja uma divisão por 0 ou raiz de numero negativo.
+
+# (a, b, c) = map(float, input().split(' '))
+# 
+# delta = (b**2 - 4 * a * c)
+# 
+# if delta <= 0 or a == 0:
+#     print("Impossivel calcular")
+# else:
+#     raiz1 = (-b + (delta)**0.5) / (2 * a)
+#     raiz2 = (-b - (delta)**0.5) / (2 * a)
+#     
+#     print(f"R1 = {raiz1:.5f}")
+#     print(f"R2 = {raiz2:.5f}")
+
+
+
+#
 
