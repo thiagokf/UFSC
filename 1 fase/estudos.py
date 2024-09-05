@@ -371,7 +371,7 @@ print(f"{minutos_evento} minuto(s)")
 print(f"{segundos_evento} segundo(s)")
 
 #codigo cola
-
+#asd
 # StrDi = input().split()
 # StrHi = input().split()
 # StrDf = input().split()
