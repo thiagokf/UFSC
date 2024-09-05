@@ -307,38 +307,43 @@
 
 
 #tipos de triangulos
-#Leia 3 valores de ponto flutuante A, B e C e ordene-os em ordem decrescente, de modo que o lado A representa o maior dos 3 lados. A seguir, determine o tipo de triângulo que estes três lados formam, com base nos seguintes casos, sempre escrevendo uma mensagem adequada:
+#Leia 3 valores de ponto flutuante A, B e C e ordene-os em ordem decrescente,
+#de modo que o lado A representa o maior dos 3 lados. A seguir, determine o tipo de triângulo 
+#que estes três lados formam, com base nos seguintes casos, sempre escrevendo uma mensagem adequada:
 
-# (x, y, z) = map(float, input().split(' '))
-# 
-# if (x >= y) and (x >= z):
-#     a = x
-#     b = y
-#     c = z
-# if (y >= x) and (y >= z):
-#     a = y
-#     b = x 
-#     c = z
-# if (z >= x) and (z >= z):
-#     a = z
-#     b = x
-#     c = y
-# 
-# 
-# if a >= b + c:
-#     print("NAO FORMA TRIANGULO")
-# elif (a**2 == b**2 + c**2):
-#     print("TRIANGULO RETANGULO")
-# elif (a**2 > b**2 + c**2):
-#     print("TRIANGULO OBTUSANGULO")
-# elif (a**2 < b**2 + c**2):
-#     print("TRIANGULO ACUTANGULO")
-# if a == b == c:
-#     print("TRIANGULO EQUILATERO")
-# elif a == b or b == c or a == c:
-#     print("TRIANGULO ISOSCELES")
-    
-    
+#(x, y, z) = map(float, input().split(' '))
+
+#if (x >= y) and (x >= z):
+ #   a = x
+#    b = y
+#    c = z
+#if (y >= x) and (y >= z):
+  #  a = y
+ #   b = x 
+#    c = z
+#if (z >= x) and (z >= z):
+   # a = z
+  #  b = x
+ #   c = y
+
+
+#if a >= b + c:
+#    print("NAO FORMA TRIANGULO")
+#elif (a**2 == b**2 + c**2):
+#    print("TRIANGULO RETANGULO")
+#elif (a**2 > b**2 + c**2):
+ #   print("TRIANGULO OBTUSANGULO")
+#elif (a**2 < b**2 + c**2):
+#    print("TRIANGULO ACUTANGULO")
+#if a == b == c:
+#    print("TRIANGULO EQUILATERO")
+#elif a == b or b == c or a == c:
+#    print("TRIANGULO ISOSCELES")
+
+
+
+#exercicio 1061
+
 #exercicio 1061
 
 dia_inicio = int(input().split()[1])
@@ -501,25 +506,22 @@ print(f"{segundos_evento} segundo(s)")
 
 
 
-# exercicio Formuda de Bhaskara
+#exercicio Formuda de Bhaskara
 #Leia 3 valores de ponto flutuante e efetue o cálculo das raízes da equação de Bhaskara. 
 #Se não for possível calcular as raízes, mostre a mensagem correspondente “Impossivel calcular”, 
 #caso haja uma divisão por 0 ou raiz de numero negativo.
 
-# (a, b, c) = map(float, input().split(' '))
-# 
-# delta = (b**2 - 4 * a * c)
-# 
-# if delta <= 0 or a == 0:
-#     print("Impossivel calcular")
-# else:
-#     raiz1 = (-b + (delta)**0.5) / (2 * a)
-#     raiz2 = (-b - (delta)**0.5) / (2 * a)
-#     
-#     print(f"R1 = {raiz1:.5f}")
-#     print(f"R2 = {raiz2:.5f}")
+(a, b, c) = map(float, input().split(' '))
+
+delta = (b**2 - 4 * a * c)
+raiz1 = (-b + (delta)**0.5) / (2 * a)
+raiz2 = (-b - (delta)**0.5) / (2 * a)
+
+if delta <= 0:
+    print("Impossivel calcular")
+else:
+    print(f"R1 = {raiz1:.5f}")
+    print(f"R2 = {raiz2:.5f}")
 
 
-
-#
 
