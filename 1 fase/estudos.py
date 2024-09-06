@@ -346,34 +346,6 @@
 
 #exercicio 1061
 
-dia_inicio = int(input().split()[1])
-(hh, mm, ss) = map(int, input().split(':'))
-
-dia_fim = int(input().split()[1])
-(hh2, mm2, ss2) = map(int, input().split(':'))
-
-min_seg = 60
-hora_seg = 3600
-dia_seg = 86400
-
-ini = ss + (mm*min_seg) + (hh*hora_seg) + (dia_inicio*dia_seg)
-fim = ss2 + (mm2*min_seg) + (hh2*hora_seg) + (dia_fim*dia_seg)
-
-if ini < fim:
-    tempo = fim - ini
-    dias_evento = (tempo // 86400)
-    tempo = tempo%dia_seg
-    horas_evento = (tempo // 3600)
-    tempo = tempo%hora_seg
-    minutos_evento = (tempo // 60)
-    tempo = tempo%min_seg
-    segundos_evento = tempo
-
-
-print(f"{dias_evento} dia(s)")
-print(f"{horas_evento} hora(s)")
-print(f"{minutos_evento} minuto(s)")
-print(f"{segundos_evento} segundo(s)")
 
 #codigo cola
 #asd
@@ -511,17 +483,45 @@ print(f"{segundos_evento} segundo(s)")
 #Se não for possível calcular as raízes, mostre a mensagem correspondente “Impossivel calcular”, 
 #caso haja uma divisão por 0 ou raiz de numero negativo.
 
-(a, b, c) = map(float, input().split(' '))
+# (a, b, c) = map(float, input().split(' '))
+# 
+# delta = (b**2 - 4 * a * c)
+# raiz1 = (-b + (delta)**0.5) / (2 * a)
+# raiz2 = (-b - (delta)**0.5) / (2 * a)
+# 
+# if delta <= 0:
+#     print("Impossivel calcular")
+# else:
+#     print(f"R1 = {raiz1:.5f}")
+#     print(f"R2 = {raiz2:.5f}")
 
-delta = (b**2 - 4 * a * c)
-raiz1 = (-b + (delta)**0.5) / (2 * a)
-raiz2 = (-b - (delta)**0.5) / (2 * a)
 
-if delta <= 0:
-    print("Impossivel calcular")
-else:
-    print(f"R1 = {raiz1:.5f}")
-    print(f"R2 = {raiz2:.5f}")
+
+# exercicio Vice-Campeao
+
+# (x, y, z) = map(int, input().split(' '))
+# 
+# if x < y < z or z < y < x:
+#     a = y
+#     b = x
+#     c = z
+#     
+# elif y < x < z or z < x < y:
+#     a = x
+#     b = y
+#     c = z
+# elif y < z < x or x < z < y:
+#     a = z
+#     b = y
+#     c = x
+# 
+# print(a)
+
+
+
+#
+    
+
 
 
 
