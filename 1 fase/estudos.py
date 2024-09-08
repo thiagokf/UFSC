@@ -525,27 +525,55 @@
 #o número de empates do Cormengo, o saldo de gols do Cormengo, o número de vitórias do Flaminthians,
 #o número de empates do Flaminthians e o saldo de gols do Flaminthians.
 
-(Cv, Ce, Cs, Fv, Fe, Fs) = map(int, input().split(' '))
+# (Cv, Ce, Cs, Fv, Fe, Fs) = map(int, input().split(' '))
+# 
+# pontos_vitoria_C = Cv * 3
+# pontos_vitoria_F = Fv * 3
+# 
+# pontos_C = pontos_vitoria_C + Ce
+# pontos_F = pontos_vitoria_F + Fe
+# 
+# if pontos_C > pontos_F:
+#     print("C")
+# elif pontos_C < pontos_F:
+#     print("F")
+# elif pontos_C == pontos_F:
+#     if Cs > Fs:
+#         print("C")
+#     elif Cs < Fs:
+#         print("F")
+#     else:
+#         print("=")
 
-pontos_vitoria_C = Cv * 3
-pontos_vitoria_F = Fv * 3
-
-pontos_C = pontos_vitoria_C + Ce
-pontos_F = pontos_vitoria_F + Fe
-
-if pontos_C > pontos_F:
-    print("C")
-elif pontos_C < pontos_F:
-    print("F")
-elif pontos_C == pontos_F:
-    if Cs > Fs:
-        print("C")
-    elif Cs < Fs:
-        print("F")
-    else:
-        print("=")
 
 
+#exercicio 2568
+
+# (d, i, x, f) = map(int, input().split(' '))
+# 
+# dias = d + f
+# 
+# if (dias % 2 == 0):
+#     preco = i + 
+# else:
+#     preco = i - x
+#     
+# print(preco)
+# 
+# x * (
+
+dreg, prei, vprea, ndfut = map(int,input().split())
+
+i=0
+precototal = prei
+while i < ndfut:
+    dreg += 1
+    if dreg % 2 == 0:
+        precototal += vprea
+    if dreg % 2 != 0:
+        precototal -= vprea
+    i += 1
+print(precototal)
     
 
 
