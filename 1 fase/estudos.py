@@ -519,7 +519,33 @@
 
 
 
-#
+#A entrada é descrita em uma única linha, que contém seis inteiros,
+#separados por um espaço em branco: Cv, Ce, Cs, Fv, Fe e Fs, (0 ≤ Cv, Ce, Fv, Fe ≤ 100),
+#(-1000 ≤ Cs, Fs ≤ 1000) que são, respectivamente, o número de vitórias do Cormengo,
+#o número de empates do Cormengo, o saldo de gols do Cormengo, o número de vitórias do Flaminthians,
+#o número de empates do Flaminthians e o saldo de gols do Flaminthians.
+
+(Cv, Ce, Cs, Fv, Fe, Fs) = map(int, input().split(' '))
+
+pontos_vitoria_C = Cv * 3
+pontos_vitoria_F = Fv * 3
+
+pontos_C = pontos_vitoria_C + Ce
+pontos_F = pontos_vitoria_F + Fe
+
+if pontos_C > pontos_F:
+    print("C")
+elif pontos_C < pontos_F:
+    print("F")
+elif pontos_C == pontos_F:
+    if Cs > Fs:
+        print("C")
+    elif Cs < Fs:
+        print("F")
+    else:
+        print("=")
+
+
     
 
 
