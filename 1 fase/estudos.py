@@ -579,24 +579,104 @@
 
 #exercicio 1046
 
-(inicio, fim) = map(int, input().split(' '))
-
-if fim > inicio:
-    tempo_jogo = fim - inicio
-elif inicio > fim:
-    tempo_jogo = (24 - inicio) + fim
-else:
-    tempo_jogo = 24
-    
-print(f"O JOGO DUROU {tempo_jogo} HORA(S)")
-    
-
-    
-    
-    
+# (inicio, fim) = map(int, input().split(' '))
+# 
+# if fim > inicio:
+#     tempo_jogo = fim - inicio
+# elif inicio > fim:
+#     tempo_jogo = (24 - inicio) + fim
+# else:
+#     tempo_jogo = 24
+#     
+# print(f"O JOGO DUROU {tempo_jogo} HORA(S)") 
     
 
+
+#exercicio 1047
+
+# (hi, mi, hf, mf) = map(int, input().split(' '))
+# 
+# duracao_min = ((hf - hi) * 60) + (mf - mi)
+# 
+# if duracao_min <=0:
+#     duracao_min = duracao_min + 24*60
+# hora = duracao_min // 60
+# minuto = duracao_min % 60
+# 
+# if hf == hi and mf == mi:
+#     hora = 24
+#     minuto = 0
+# 
+# print(f"O JOGO DUROU {hora} HORA(S) E {minuto} MINUTO(S)")
+   
+
+  
+# exercicio 2375
+
+# diametro = int(input())
+# 
+# (h, l, p) = map(int, input().split(' '))
+# 
+# if diametro > h or diametro > l or diametro > p:
+#     print("N")
+# else:
+#     print("S")
+
+
+# exercicio 1048
+
+# salario = float(input())
+# 
+# 
+# if salario <= 400:
+#     aumento = salario + (salario * 0.15)
+#     reajuste = (salario * 0.15)
+#     percentual = "15 %"
+# elif salario <= 800:
+#     aumento = salario + (salario * 0.12)
+#     reajuste = (salario * 0.12)
+#     percentual = "12 %"
+# elif salario <= 1200:
+#     aumento = salario + (salario * 0.10)
+#     reajuste = (salario * 0.10)
+#     percentual = "10 %"
+# elif salario <= 2000:
+#     aumento = salario + (salario * 0.07)
+#     reajuste = (salario * 0.07)
+#     percentual = "7 %"
+# else:
+#     aumento = salario + (salario * 0.04)
+#     reajuste = (salario * 0.04)
+#     percentual = "4 %"
+#     
+# print(f"Novo salario: {aumento:.2f}")
+# print(f"Reajuste ganho: {reajuste:.2f}")
+# print(f"Em percentual: {percentual}")
+
+
+
+# exercicio 2409
+(a, b, c) = map(int, input().split(' '))
+(h, l) = map(int, input().split(' '))
+
+if A <= H and B <= L:
+        print('S')
+    elif A <= H and C <= L:
+        print('S')
+    elif B <= H and A <= L:
+        print('S')
+    elif B <= H and C <= L:
+        print('S')
+    elif C <= H and A <= L:
+        print('S')
+    elif C <= H and B <= L:
+        print('S')
+    else:
+        print('N')
+
     
+
+
 
 
 
