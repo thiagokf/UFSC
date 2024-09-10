@@ -656,28 +656,121 @@
 
 
 # exercicio 2409
-(a, b, c) = map(int, input().split(' '))
-(h, l) = map(int, input().split(' '))
+# (a, b, c) = map(int, input().split(' '))
+# (h, l) = map(int, input().split(' '))
+# 
+# if A <= H and B <= L:
+#         print('S')
+#     elif A <= H and C <= L:
+#         print('S')
+#     elif B <= H and A <= L:
+#         print('S')
+#     elif B <= H and C <= L:
+#         print('S')
+#     elif C <= H and A <= L:
+#         print('S')
+#     elif C <= H and B <= L:
+#         print('S')
+#     else:
+#         print('N')
 
-if A <= H and B <= L:
-        print('S')
-    elif A <= H and C <= L:
-        print('S')
-    elif B <= H and A <= L:
-        print('S')
-    elif B <= H and C <= L:
-        print('S')
-    elif C <= H and A <= L:
-        print('S')
-    elif C <= H and B <= L:
-        print('S')
-    else:
-        print('N')
 
+
+
+# semana 3
+
+# exercicio 1
+# Escreva um programa que imprima todos os anos bissextos do século XXI.
+# Lembre-se que o primeiro ano bissexto do século foi em 2004 e
+#que oúltimo será em 2096 e que os anos bissextos ocorrem
+#usualmente de 4 em 4 anos.
+
+# i = 2004
+# 
+# while i < 2097:
+#     print(i)
+#     i += 4
+    
+    
+    
+# exercicio 2
+# Faça um programa que imprima na tela apenas os números ímpares
+# entre 1 e 50.
+
+# i = 1
+# 
+# while i < 51:
+#     print(i)
+#     i = (i + 2)
+
+
+
+# exercicio 3
+
+# i = 1
+# melhor_nota = 0
+# while i <= 5:
+#     nome = input("nome do aluno: ")
+#     nota = float(input("media geral: "))
+#     mensalidade = float(input("mensalidade: "))
+#     
+#     if melhor_nota < nota:
+#         melhor_nota = nota
+#         melhor_aluno = nome
+#         melhor_mensalidade = mensalidade
+#     mensalidade_desconto = mensalidade - (mensalidade * 0.3)
+#     i += 1
+#     
+# print(f"Aluno com a melhor nota: {melhor_aluno}")
+# print(f"Valor da mensalidade (sem desconto): R${melhor_mensalidade:.2f}")
+# print(f"Valor da mensalidade com desconto: R${mensalidade_desconto}")
     
 
 
+# exercicio 4
+# Faça um programa que peça 10 números inteiros, calcule e mostre a quantidade
+# de números pares e a quantidade de números impares.
 
+# quantidade_par = 0
+# quantidade_impar = 0
+# 
+# i = 0
+# 
+# while i < 10:
+#     numero = int(input())
+#     
+#     if numero % 2 == 0:
+#         quantidade_par += 1
+#     else:
+#         quantidade_impar += 1
+#         
+#     i += 1
+# 
+# print(f"o numero de pares é {quantidade_par}")
+# print(f"o numero de impares é {quantidade_impar}")
+
+
+
+# exercicio 5
+# Faça um programa que peça um número inteiro
+# e determine se ele é ou não um número primo.
+# Um número primo é aquele que é divisível
+# somente por elemesmo e por 1.
+
+
+numero = int(input())
+i = 1
+div = 0
+while i <= numero:
+    if numero % i == 0:
+        div = div + 1
+    i += 1
+if div == 2:
+    print("numero primo")
+else:
+    print("numero nao primo")
+
+    
 
 
 
