@@ -1,13 +1,13 @@
 #EXERCICIO 1
 
-#funcionario = int(input())
-#num_horas = int(input())
-#hora = float(input())
-
-#salario = num_horas * hora
-
-#print(f"NUMBER = U${funcionario}")
-#print(f"SALARY = U${salario:.2f}")
+# funcionario = int(input())
+# num_horas = int(input())
+# hora = float(input())
+# 
+# salario = num_horas * hora
+# 
+# print(f"NUMBER = U${funcionario}")
+# print(f"SALARY = U${salario:.2f}")
 
 
 
@@ -551,29 +551,51 @@
 
 # (d, i, x, f) = map(int, input().split(' '))
 # 
-# dias = d + f
+# precototal = i
+# n=0
+# while n < f:
+#     d += 1
+#     if d % 2 == 0:
+#         precototal += x
+#     if d % 2 != 0:
+#         precototal -= x
+#     n = n + 1
+# print(precototal)
+
+# exercicio 2600
+
+# numero_teste = int(input())
 # 
-# if (dias % 2 == 0):
-#     preco = i + 
+# l1 = int(input())
+# (l2, l3, l4, l5) = map(int, input().split(' '))
+# l6 = int(input())
+# 
+# if l1 + l6 == 7 and l2 + l4 == 7 and l3 + l5 == 7:
+#     print("SIM")
 # else:
-#     preco = i - x
-#     
-# print(preco)
-# 
-# x * (
+#     print("NAO")
 
-dreg, prei, vprea, ndfut = map(int,input().split())
 
-i=0
-precototal = prei
-while i < ndfut:
-    dreg += 1
-    if dreg % 2 == 0:
-        precototal += vprea
-    if dreg % 2 != 0:
-        precototal -= vprea
-    i += 1
-print(precototal)
+
+#exercicio 1046
+
+(inicio, fim) = map(int, input().split(' '))
+
+if fim > inicio:
+    tempo_jogo = fim - inicio
+elif inicio > fim:
+    tempo_jogo = (24 - inicio) + fim
+else:
+    tempo_jogo = 24
+    
+print(f"O JOGO DUROU {tempo_jogo} HORA(S)")
+    
+
+    
+    
+    
+    
+
     
 
 
