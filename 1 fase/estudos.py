@@ -757,10 +757,12 @@
 # Um número primo é aquele que é divisível
 # somente por elemesmo e por 1.
 
+# perguntar pro matheus dps
 
 numero = int(input())
 i = 1
 div = 0
+
 while i <= numero:
     if numero % i == 0:
         div = div + 1
@@ -768,9 +770,47 @@ while i <= numero:
 if div == 2:
     print("numero primo")
 else:
-    print("numero nao primo")
-
+    i = 1
+    while i <= numero:
+        if numero % i == 0:
+            print(i)
+        i += 1
     
+    
+
+# exercicio 7
+
+# n = int(input("numero de pessoas: "))
+# 
+# i = 1
+# id_turma = 0
+# while i <= n:
+#     idade = int(input("idade: "))
+#     id_turma = id_turma + idade
+#     i = i + 1
+# media = id_turma / n
+# 
+# if media < 26:
+#     print("turma jovem")
+# elif media < 61:
+#     print("turma adulta")
+# else:
+#     print("turma idosa")
+    
+
+
+#exercicio 8
+
+# (a, b) = map(int, input().split(' '))
+# 
+# i = a + 1
+# somai = 0
+# while a < i < b:
+#     print(i)
+#     somai = somai + i
+#     i += 1
+# print("***")
+# print(somai)
 
 
 
