@@ -757,7 +757,7 @@
 # Um número primo é aquele que é divisível
 # somente por elemesmo e por 1.
 
-# perguntar pro matheus dps
+
 
 # numero = int(input())
 # i = 1
@@ -776,9 +776,34 @@
 #             print(i)
 #         i += 1
 # print("numero nao primo")
-    
 
-# # exercicio 7
+# codigo do matheus
+# aux = 0
+# 
+# numero = int(input(''))
+# 
+# if numero <= 1:
+#     print('não é primo')
+# 
+# elif numero == 2:
+#     print('é primo')
+# 
+# else:
+#     for i in range(2, numero):
+#         if numero % i == 0:
+#             if aux == 0:
+#                 print('Não é primo')
+#                 print(1)
+#                 aux += 1
+#             print(i)
+#     if aux == 0:
+#         print('É primo')
+#     else:
+#         print(numero)
+
+
+
+#  exercicio 7
 # 
 # n = int(input("numero de pessoas: "))
 # 
@@ -796,9 +821,9 @@
 #     print("turma adulta")
 # else:
 #     print("turma idosa")
-#     
-# 
-# 
+
+
+
 # #exercicio 8
 # 
 # (a, b) = map(int, input().split(' '))
