@@ -759,27 +759,27 @@
 
 # perguntar pro matheus dps
 
-numero = int(input())
-i = 1
-div = 0
-
-while i <= numero:
-    if numero % i == 0:
-        div = div + 1
-    i += 1
-if div == 2:
-    print("numero primo")
-else:
-    i = 1
-    while i <= numero:
-        if numero % i == 0:
-            print(i)
-        i += 1
+# numero = int(input())
+# i = 1
+# div = 0
+# 
+# while i <= numero:
+#     if numero % i == 0:
+#         div = div + 1
+#     i += 1
+# if div == 2:
+#     print("numero primo")
+# else:
+#     i = 1
+#     while i <= numero:
+#         if numero % i == 0:
+#             print(i)
+#         i += 1
+# print("numero nao primo")
     
-    
 
-# exercicio 7
-
+# # exercicio 7
+# 
 # n = int(input("numero de pessoas: "))
 # 
 # i = 1
@@ -796,11 +796,11 @@ else:
 #     print("turma adulta")
 # else:
 #     print("turma idosa")
-    
-
-
-#exercicio 8
-
+#     
+# 
+# 
+# #exercicio 8
+# 
 # (a, b) = map(int, input().split(' '))
 # 
 # i = a + 1
@@ -813,4 +813,49 @@ else:
 # print(somai)
 
 
+#exercicio 9
+#exercicio 10
+# i = 0
+# media = 0
+# melhor_nota = 0
+# while i < 3:
+#     aluno = input("nome: ")
+#     nota = float(input("nota: "))
+#     
+#     if melhor_nota < nota:
+#         melhor_nota = nota
+#         melhor_aluno = aluno
+#     i += 1
+#     
+# print(melhor_aluno)
+# 
+# if melhor_nota >= 5.75:
+#     print("Aprovado pae")
+# elif melhor_nota >= 2.75:
+#     print("Recuperacao noob")
+# else:
+#     print("Reprovado lixo")
 
+aux = 0
+
+numero = int(input(''))
+
+if numero <= 1:
+    print('não é primo')
+
+elif numero == 2:
+    print('é primo')
+
+else:
+    for i in range(2, numero):
+        if numero % i == 0:
+            if aux == 0:
+                print('Não é primo')
+                print(1)
+                aux += 1
+            print(i)
+    if aux == 0:
+        print('É primo')
+    else:
+        print(numero)
+    
