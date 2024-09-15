@@ -838,7 +838,6 @@
 # print(somai)
 
 
-#exercicio 9
 #exercicio 10
 # i = 0
 # media = 0
@@ -888,10 +887,35 @@
 
 # exercicio tabuada
 
-numero = int(input())
-print(f"tabuada do {numero}")
-for i in range (1, 11):
-    tabuada = numero * i
-    print(f"{numero} x {i} = {tabuada}")
+# numero = int(input())
+# print(f"tabuada do {numero}:")
+# for i in range (1, 11):
+#     tabuada = numero * i
+#     print(f"{numero} x {i} = {tabuada}")
+# 
+#     i += 1
 
-    i += 1
+
+
+# exercicio 11
+n = int(input())
+soma_num = 0
+maior_num = 0
+menor_num = 100000000
+for i in range(n):
+    num = int(input("numero: "))
+    soma_num = num + soma_num
+    if num > maior_num:
+        maior_num = num
+    if num < menor_num:
+        menor_num = num
+        
+media = (soma_num) / n
+
+print(f"media dos numeros: {media}")
+print(f"maior numero: {maior_num}")
+print(f"menor numero: {menor_num}")
+
+    
+        
+    
