@@ -921,8 +921,28 @@
 
 # exercicio 12
 
+n = int(input("numero de praias: "))
+maior_distancia = 0
+media = 0
+praia_centro = 0
+for i in range(n):
+    praia = input("praia: ")
+    distancia = int(input("distancia: "))
 
+    media = distancia + media
 
+    if maior_distancia < distancia:
+        maior_distancia = distancia
+        praia_longe = praia
     
+    if 15 < distancia < 20:
+       praia_centro += 1
+
+media = media / n
+
+print(f"praia mais distante: {praia_longe} com {maior_distancia}km de distancia do centro")
+print(f"{praia_centro} estao entre 15km e 20km de distancia do centro")
+print(f"media de distancia das praias: {media:.1f}")
+
         
     
