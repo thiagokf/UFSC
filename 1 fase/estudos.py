@@ -950,14 +950,20 @@
 
 #exercicio 1
 
-sexo = input()
+# sexo = input()
 
-match (sexo):
-    case "masculino":
-      print("M")
-    case "feminino":
-      print("F")
-    case _:
-      print("erro. insira novamente")
+# match (sexo):
+#     case "masculino":
+#       print("M")
+#     case "feminino":
+#       print("F")
+#     case _:
+#       print("erro. insira novamente")
+
+try:
+    numero = int(input("digite um numero: "))
+    print(f"o dobro de {numero} é {numero*2}")
+except:
+    print("ERRO: Digite um numero inteiro!")
 
     
