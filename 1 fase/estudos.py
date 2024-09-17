@@ -1049,3 +1049,17 @@ print("MUITO OBRIGADO")
 print(f"Alcool: {alcool}")
 print(f"Gasolina: {gasolina}")
 print(f"Diesel: {diesel}")
+
+# exercicio 1101
+i = 1
+soma = 0
+while i != 0:
+    (m, n) = map(int, input().split(' '))
+    i = n
+    n = n - 1
+    while n != m:
+        num = n + 1
+        print(num, end=' ')
+        soma = soma + num
+        n = n + 1
+    print(soma)
