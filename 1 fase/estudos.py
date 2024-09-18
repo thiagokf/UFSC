@@ -950,8 +950,12 @@
 
 #exercicio 1
 
-# sexo = input()
+sexo = input("digite o sexo: ").upper().strip()
 
+while sexo != "M" and sexo != "F":
+    print(f"erro: {sexo} não é uma resposta correta")
+    sexo = input("digite o sexo: ").upper().strip()
+print(f"o sexo é {sexo}")
 # match (sexo):
 #     case "masculino":
 #       print("M")
