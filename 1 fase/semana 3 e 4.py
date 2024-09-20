@@ -289,88 +289,88 @@
 #     print("ERRO: Digite um numero inteiro!")
 
 # exercicio 2
-import random
-n = 8
-value = 0
-while value != n:
-    value = int(input())
-    value == n
+# import random
+# n = 8
+# value = 0
+# while value != n:
+#     value = int(input())
+#     value == n
     
-print(f"acertou, o numero certo é {n}")
+# print(f"acertou, o numero certo é {n}")
 
-# exercicio 3   
-salario = float(input())
+# # exercicio 3   
+# salario = float(input())
 
-desconto = salario * 0.11
+# desconto = salario * 0.11
 
-if desconto > 320:
-    desconto = 320
-    x = (32000) / salario 
-else:
-    desconto = desconto
-    x = 11
-novo_salario = salario - (desconto)
+# if desconto > 320:
+#     desconto = 320
+#     x = (32000) / salario 
+# else:
+#     desconto = desconto
+#     x = 11
+# novo_salario = salario - (desconto)
 
-print(f"o novo salario é {novo_salario} com {x}% de desconto")   
+# print(f"o novo salario é {novo_salario} com {x}% de desconto")   
 
 
-# exercicio 1075
-n = int(input())
+# # exercicio 1075
+# n = int(input())
 
-for i in range(1, 10000):
-    if i % n == 2:
-        print(i)
+# for i in range(1, 10000):
+#     if i % n == 2:
+#         print(i)
 
-#exercicio 1078
-n = int(input())
+# #exercicio 1078
+# n = int(input())
 
-i = 1
-tabuada = 0
-while i <= 10:
-    tabuada = n*i
-    print(f"{i} x {n} = {tabuada}")
+# i = 1
+# tabuada = 0
+# while i <= 10:
+#     tabuada = n*i
+#     print(f"{i} x {n} = {tabuada}")
     
-    i += 1
+#     i += 1
 
-# exercicio 1146: chat gpt altos codigo slc
+# # exercicio 1146: chat gpt altos codigo slc
 
-while True:
-        # Lê um número inteiro do usuário
-    X = int(input("Digite um número inteiro (ou 0 para parar): "))
+# while True:
+#         # Lê um número inteiro do usuário
+#     X = int(input("Digite um número inteiro (ou 0 para parar): "))
         
-        # Se o número for zero, o programa deve parar
-    if X == 0:
-        break
+#         # Se o número for zero, o programa deve parar
+#     if X == 0:
+#         break
         
-        # Cria uma lista com a sequência de números de 1 até X
-    sequencia = []
-    for i in range(1, X + 1):
-        sequencia.append(str(i))  # Adiciona o número como string à lista
+#         # Cria uma lista com a sequência de números de 1 até X
+#     sequencia = []
+#     for i in range(1, X + 1):
+#         sequencia.append(str(i))  # Adiciona o número como string à lista
         
-        # Junta os números com espaço e imprime
-    print(" ".join(sequencia))
+#         # Junta os números com espaço e imprime
+#     print(" ".join(sequencia))
 
 
-# exercicio 1134
-n = 0
-gasolina = 0
-alcool = 0
-diesel = 0
-while n != 4:
-    n = int(input())
-    match (n):
-        case 1:
-            alcool += 1
-        case 2:
-            gasolina += 1
-        case 3:
-            diesel += 1
-        case 4:
-            break
-print("MUITO OBRIGADO")
-print(f"Alcool: {alcool}")
-print(f"Gasolina: {gasolina}")
-print(f"Diesel: {diesel}")
+# # exercicio 1134
+# n = 0
+# gasolina = 0
+# alcool = 0
+# diesel = 0
+# while n != 4:
+#     n = int(input())
+#     match (n):
+#         case 1:
+#             alcool += 1
+#         case 2:
+#             gasolina += 1
+#         case 3:
+#             diesel += 1
+#         case 4:
+#             break
+# print("MUITO OBRIGADO")
+# print(f"Alcool: {alcool}")
+# print(f"Gasolina: {gasolina}")
+# print(f"Diesel: {diesel}")
 
 # exercicio 1101
 
@@ -399,12 +399,6 @@ while i != 0:
             soma = soma + num
             m = m + 1
         print(f"Sum={soma}")
+    soma = 0
 
-    i = n
-    n = n - 1
-    while n != m:
-        num = n + 1
-        print(num, end=' ')
-        soma = soma + num
-        n = n + 1
-    print(soma)
+    
