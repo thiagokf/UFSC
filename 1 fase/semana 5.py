@@ -97,22 +97,56 @@
 #exercicio 1115
 
 
-aux = 0
-while aux != 1:
-    (x, y) = map(int, input().split(' '))
-    if x == 0 or y == 0:
-        aux = 1
-        
-    if x > 0 and y > 0:
-        print("primeiro")
-    elif x < 0 and y > 0:
-        print("segundo")
-    elif x < 0 and y < 0:
-        print("terceiro")
-    elif x > 0 and y < 0:
-        print("quarto")
+# aux = 0
+# while aux != 1:
+#     (x, y) = map(int, input().split(' '))
+#     if x == 0 or y == 0:
+#         aux = 1
+#         
+#     if x > 0 and y > 0:
+#         print("primeiro")
+#     elif x < 0 and y > 0:
+#         print("segundo")
+#     elif x < 0 and y < 0:
+#         print("terceiro")
+#     elif x > 0 and y < 0:
+#         print("quarto")
  
         
     
+# n, c = [int(x) for x in input().split()]
+# pessoas = 0
+# exc = 0
+# 
+# while n:
+#     n -= 1
+#     s, e = [int(x) for x in input().split()]
+#     pessoas += e
+#     pessoas -= s
+#     if pessoas > c:
+#         exc = 1
+# 
+# if exc:
+#     print('S')
+# else:
+#     print('N')
     
     
+    
+(n, c) = map(int, input().split(' '))
+pessoas = 0
+exc = 0
+
+i = 0
+while i < n:
+    (s, e) = map(int, input().split(' '))
+    pessoas += e
+    pessoas -= s
+    if pessoas > c:
+        exc = 1
+    i += 1
+
+if exc == 1:
+    print("S")
+else:
+    print("N")
