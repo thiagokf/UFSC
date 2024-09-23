@@ -75,23 +75,44 @@
 # 
 # viagem(saida, tempo, fuso)
 
-def ultrapassando(x, z):
-    soma = 0
-    num_soma = 0
-    for i in range(x, z):
-        soma = soma + (x + 1)
-        num_soma += 1
-        
-        if soma >= z:
-            print(num_soma)
-            break
-x = int(input())
+# def ultrapassando(x, z):
+#     soma = 0
+#     num_soma = 0
+#     for i in range(x, z):
+#         soma = soma + (x + 1)
+#         num_soma += 1
+#         
+#         if soma >= z:
+#             print(num_soma)
+#             break
+# x = int(input())
+# aux = 0
+# while aux != 1:
+#     z = int(input())
+#     if z > x:
+#         aux += 1
+# ultrapassando(x, z)
+
+
+#exercicio 1115
+
+
 aux = 0
 while aux != 1:
-    z = int(input())
-    if z > x:
-        aux += 1
-ultrapassando(x, z)
+    (x, y) = map(int, input().split(' '))
+    if x == 0 or y == 0:
+        aux = 1
+        
+    if x > 0 and y > 0:
+        print("primeiro")
+    elif x < 0 and y > 0:
+        print("segundo")
+    elif x < 0 and y < 0:
+        print("terceiro")
+    elif x > 0 and y < 0:
+        print("quarto")
+ 
+        
     
     
     
