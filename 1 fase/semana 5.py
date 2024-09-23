@@ -133,20 +133,24 @@
     
     
     
-(n, c) = map(int, input().split(' '))
-pessoas = 0
-exc = 0
+#(n, c) = map(int, input().split(' '))
+#pessoas = 0
+#exc = 0
 
-i = 0
-while i < n:
-    (s, e) = map(int, input().split(' '))
-    pessoas += e
-    pessoas -= s
-    if pessoas > c:
-        exc = 1
-    i += 1
+#i = 0
+#while i < n:
+#    (s, e) = map(int, input().split(' '))
+#    pessoas += e
+#    pessoas -= s
+#    if pessoas > c:
+#        exc = 1
+#    i += 1
 
-if exc == 1:
-    print("S")
-else:
-    print("N")
+#if exc == 1:
+#    print("S")
+#else:
+#    print("N")
+
+
+# com return
+
