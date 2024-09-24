@@ -153,4 +153,81 @@
 
 
 # com return
+# exercicio 1
+melhor_nota = 0
+media = 0
+def melhor(aluno, nota, melhor_nota):
+     
+    if melhor_nota < nota:
+        melhor_nota = nota
+    else:
+        melhor_nota = melhor_nota
+    return melhor_nota
+
+for i in range(3):
+    aluno = input("nome do aluno: ")
+    nota = float(input("nota: "))
+    media += nota
+    melhor_nota = melhor(aluno, nota, melhor_nota)
+    
+media = media / 3
+print(f"media das notas: {media:.2f}")
+print(f"melhor nota: {melhor(aluno, nota, melhor_nota)}")
+
+if melhor(aluno, nota, melhor_nota) > 5.75:
+    print("aluno aprovado! :)")
+elif melhor(aluno, nota, melhor_nota) >= 2.75:
+    print("aluno em recuperação :/")
+elif melhor(aluno, nota, melhor_nota) < 2.75:
+    print("aluno reprovado :(")
+
+
+# exercicio 2
+# sem return
+
+def imparpar(n):
+    if n % 2 == 0:
+        print(f"{n} é par!")
+    elif n % 2 != 0:
+        print(f"{n} é impar!")
+
+for i in range(10):
+    n = int(input())
+    imparpar(n)
+
+# com return
+
+def imparpar(n):
+    d = n % 2
+    return d
+
+for i in range(10):
+    n = int(input())
+    if imparpar(n) == 0:
+        print(f"{n} é par!")
+    else:
+        print(f"{n} é impar!")
+
+# exercicio 4
+p = 0
+div = 0
+def primo(p):
+   i = 1
+   p = 0
+   while z >= i:
+       if z % i == 0:
+           p += 1
+       i += 1     
+   return p 
+
+
+(x, y) = map(int, input().split(' '))
+z = x + 1
+while z < y:
+    p = primo(p)
+    z += 1
+    if p <= 2:
+        div += 1
+print(div)
+
 
