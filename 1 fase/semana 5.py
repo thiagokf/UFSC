@@ -35,82 +35,82 @@
 # passo = int(input("Digite o passo da contagem: "))
 # contador(inicio, fim, passo)
 
-# def contador(inicio, fim, passo):
-#     for i in range(inicio, fim + 1, passo):
-# #     i = inicio
-# #     while i <= passo:
-#         print(i, end=" ")
-# #         i += 1
-# contador(1, 10, 1)
-# print("\nfim")
-# contador(0, 10, 2)
-# print("\nfim")
-# 
-# inicio = int(input("Digite o inicio da contagem: "))
-# fim = int(input("Digite o fim da contagem: "))
-# passo = int(input("Digite o passo da contagem: "))
-# contador(inicio, fim, passo)
+ def contador(inicio, fim, passo):
+     for i in range(inicio, fim + 1, passo):
+#     i = inicio
+#     while i <= passo:
+         print(i, end=" ")
+#         i += 1
+ contador(1, 10, 1)
+ print("\nfim")
+ contador(0, 10, 2)
+ print("\nfim")
+ 
+ inicio = int(input("Digite o inicio da contagem: "))
+ fim = int(input("Digite o fim da contagem: "))
+ passo = int(input("Digite o passo da contagem: "))
+ contador(inicio, fim, passo)
 
-# def area(largura, comprimento):
-#     area = largura * comprimento
-#     print(area)
-# largura = float(input("largura: "))
-# comprimento = float(input("comprimento: "))
-# 
-# area(largura, comprimento)
+ def area(largura, comprimento):
+     area = largura * comprimento
+     print(area)
+ largura = float(input("largura: "))
+ comprimento = float(input("comprimento: "))
+ 
+ area(largura, comprimento)
 
 
 # exercicio 2057
 
-# def viagem(saida, tempo, fuso):
-#     tempo_viagem = saida + tempo + fuso
-#     if tempo_viagem > 24:
-#         tempo_viagem -= 24
-#     if tempo_viagem < 0:
-#         tempo_viagem += 24
-#     print(tempo_viagem)
-# 
-# (saida, tempo, fuso) = map(int, input().split(' '))
-# 
-# 
-# viagem(saida, tempo, fuso)
+ def viagem(saida, tempo, fuso):
+     tempo_viagem = saida + tempo + fuso
+     if tempo_viagem > 24:
+         tempo_viagem -= 24
+     if tempo_viagem < 0:
+         tempo_viagem += 24
+     print(tempo_viagem)
+ 
+ (saida, tempo, fuso) = map(int, input().split(' '))
+ 
+ 
+ viagem(saida, tempo, fuso)
 
-# def ultrapassando(x, z):
-#     soma = 0
-#     num_soma = 0
-#     for i in range(x, z):
-#         soma = soma + (x + 1)
-#         num_soma += 1
-#         
-#         if soma >= z:
-#             print(num_soma)
-#             break
-# x = int(input())
-# aux = 0
-# while aux != 1:
-#     z = int(input())
-#     if z > x:
-#         aux += 1
-# ultrapassando(x, z)
+ def ultrapassando(x, z):
+     soma = 0
+     num_soma = 0
+     for i in range(x, z):
+         soma = soma + (x + 1)
+         num_soma += 1
+         
+         if soma >= z:
+             print(num_soma)
+             break
+ x = int(input())
+ aux = 0
+ while aux != 1:
+     z = int(input())
+     if z > x:
+         aux += 1
+ ultrapassando(x, z)
 
 
 #exercicio 1115
 
 
-# aux = 0
-# while aux != 1:
-#     (x, y) = map(int, input().split(' '))
-#     if x == 0 or y == 0:
-#         aux = 1
-#         
-#     if x > 0 and y > 0:
-#         print("primeiro")
-#     elif x < 0 and y > 0:
-#         print("segundo")
-#     elif x < 0 and y < 0:
-#         print("terceiro")
-#     elif x > 0 and y < 0:
-#         print("quarto")
+ aux = 0
+ while aux != 1:
+     (x, y) = map(int, input().split(' '))
+     if x == 0 or y == 0:
+         aux = 1
+         
+     if x > 0 and y > 0:
+         print("primeiro")
+     elif x < 0 and y > 0:
+         print("segundo")
+     elif x < 0 and y < 0:
+         print("terceiro")
+     elif x > 0 and y < 0:
+         print("quarto")
  
         
     
@@ -133,23 +133,23 @@
     
     
     
-#(n, c) = map(int, input().split(' '))
-#pessoas = 0
-#exc = 0
+(n, c) = map(int, input().split(' '))
+pessoas = 0
+exc = 0
 
-#i = 0
-#while i < n:
-#    (s, e) = map(int, input().split(' '))
-#    pessoas += e
-#    pessoas -= s
-#    if pessoas > c:
-#        exc = 1
-#    i += 1
+i = 0
+while i < n:
+    (s, e) = map(int, input().split(' '))
+    pessoas += e
+    pessoas -= s
+    if pessoas > c:
+        exc = 1
+    i += 1
 
-#if exc == 1:
-#    print("S")
-#else:
-#    print("N")
+if exc == 1:
+    print("S")
+else:
+    print("N")
 
 
 # com return
@@ -230,4 +230,36 @@ while z < y:
         div += 1
 print(div)
 
+# exercicio 5
 
+def media(idade):
+    media = soma_idade / qnt
+    return media
+
+aux = 0
+soma_idade = 0
+qnt = 0
+while aux != 1:
+    idade = int(input())
+    if idade < 0:
+        aux = 1
+    elif idade > 0:
+        soma_idade += idade
+        qnt += 1
+
+print(f"{media(idade):.2f}")
+
+# exercicio 6
+def media(soma, positivo):
+    media = soma / positivo
+    return media
+soma = 0
+positivo = 0
+for i in range(6):
+    n = float(input())
+    if n >= 0:
+        positivo += 1
+        soma += n
+media(soma, positivo)
+print(f"{positivo} valores positivos")
+print(f"{media(soma, positivo):.1f}")
