@@ -263,3 +263,38 @@ for i in range(6):
 media(soma, positivo)
 print(f"{positivo} valores positivos")
 print(f"{media(soma, positivo):.1f}")
+
+
+# lista 2
+
+i = 1
+aux = 0
+while i != aux:
+    num_comandos = int(input())
+    if num_comandos == 0:
+        break
+    comandos = input().upper()
+    qnt_e = comandos.count('E')
+    esquerda = qnt_e % 4
+    qnt_d = comandos.count('D')
+    direita = qnt_d % 4
+    
+    caminho = esquerda - direita
+    if caminho < 0:
+        caminho = (caminho) * -1
+    if qnt_d > qnt_e:
+        if caminho == 1:
+            print("L")
+        elif caminho == 2:
+            print("S")
+        elif caminho == 3:
+            print("O")
+        elif caminho == 0:
+            print("N")
+    else:
+        if caminho == 1:
+            print("O")
+        elif caminho == 2:
+            print("S")
+        elif caminho == 3:
+            print("L")
