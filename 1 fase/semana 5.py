@@ -298,3 +298,44 @@ while i != aux:
             print("S")
         elif caminho == 3:
             print("L")
+
+
+
+n = int(input())
+
+for i in range(n):
+    seq = input()
+    num1 = int(seq[0])
+    letra = seq[1]
+    num2 = int(seq[2])
+    
+    if num1 == num2:
+        print(num1 * num2)
+    else:    
+        if letra.isupper():
+            print(num2 - num1)
+        else:
+            print(num2 + num1)
+
+
+
+n = int(input())
+
+for i in range(n):
+    leds = 0
+    numero = input()
+    for c in numero:
+        if c == '2' or c == '3' or c == '5':
+            leds += 5
+        elif c == '6' or c == '9' or c == '0':
+            leds += 6
+        elif c == '1':
+            leds += 2
+        elif c == '4':
+            leds += 4
+        elif c == '7':
+            leds +=3
+        elif c == '8':
+            leds += 7
+    print(f"{leds} leds")
+            
