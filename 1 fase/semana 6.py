@@ -1,3 +1,4 @@
+# binario --> decimal
 binario = input()
 total = len(binario)
 
@@ -14,4 +15,20 @@ for i in range(total):
     i += 1
     n += 1
 print(decimal)
+
+
+# decimal --> binario
+decimal = int(input())
+
+binario = []
+
+while decimal > 0:
+    d = decimal % 2
+    decimal = decimal // 2
+    binario.append(d)
+t = len(binario)
+while t != 0:
+    print(binario[t-1], end='')
+    t -= 1
+
 
