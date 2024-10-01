@@ -133,20 +133,130 @@
     
     
     
-(n, c) = map(int, input().split(' '))
-pessoas = 0
-exc = 0
+# (n, c) = map(int, input().split(' '))
+# pessoas = 0
+# exc = 0
+# 
+# i = 0
+# while i < n:
+#     (s, e) = map(int, input().split(' '))
+#     pessoas += e
+#     pessoas -= s
+#     if pessoas > c:
+#         exc = 1
+#     i += 1
+# 
+# if exc == 1:
+#     print("S")
+# else:
+#     print("N")
 
-i = 0
-while i < n:
-    (s, e) = map(int, input().split(' '))
-    pessoas += e
-    pessoas -= s
-    if pessoas > c:
-        exc = 1
-    i += 1
 
-if exc == 1:
-    print("S")
-else:
-    print("N")
+
+# lista 2
+
+# i = 1
+# aux = 0
+# while i != aux:
+#     num_comandos = int(input())
+#     if num_comandos == 0:
+#         break
+#     comandos = input().upper()
+#     qnt_e = comandos.count('E')
+#     esquerda = qnt_e % 4
+#     qnt_d = comandos.count('D')
+#     direita = qnt_d % 4
+#     qnt = qnt_e + qnt_d
+#     if qnt > num_comandos:
+#         break
+#     caminho = esquerda - direita
+#     if caminho < 0:
+#         caminho = (caminho) * -1
+#     if qnt_d > qnt_e:
+#         if caminho == 1:
+#             print("L")
+#         elif caminho == 2:
+#             print("S")
+#         elif caminho == 3:
+#             print("O")
+#         elif caminho == 0:
+#             print("N")
+#     elif qnt_d < qnt_e:
+#         if caminho == 1:
+#             print("O")
+#         elif caminho == 2:
+#             print("S")
+#         elif caminho == 3:
+#             print("L")
+#     else:
+#         print("N")
+
+#     direcoes = ['N', 'L', 'S', 'O']
+# 
+#     while True:
+#         try:
+#             N = int(input())
+# 
+#             if(not N):
+#                 break
+# 
+#             comandos = input().upper()
+# 
+#             direcao = 0
+#             for comando in comandos:
+#                 if comando == 'D':
+#                     direcao = (direcao + 1) % 4
+#                 else:
+#                     direcao = ((direcao - 1) + 4) % 4
+# 
+#             print(direcoes[direcao])
+#         except EOFError:
+#             break
+
+
+n = int(input())
+
+for i in range(n):
+    seq = input()
+    num1 = int(seq[0])
+    letra = seq[1]
+    num2 = int(seq[2])
+    
+    if num1 == num2:
+        print(num1 * num2)
+    else:    
+        if letra.isupper():
+            print(num2 - num1)
+        else:
+            print(num2 + num1)
+
+
+n = int(input())
+
+for i in range(n):
+    leds = 0
+    numero = input()
+    for c in numero:
+        if c == '2' or c == '3' or c == '5':
+            leds += 5
+        elif c == '6' or c == '9' or c == '0':
+            leds += 6
+        elif c == '1':
+            leds += 2
+        elif c == '4':
+            leds += 4
+        elif c == '7':
+            leds +=3
+        elif c == '8':
+            leds += 7
+    print(f"{leds} leds")
+            
+    
+
+
+    
+    
+    
+    
+    
+    
