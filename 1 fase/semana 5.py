@@ -338,4 +338,21 @@ for i in range(n):
         elif c == '8':
             leds += 7
     print(f"{leds} leds")
+
+
+
+
+# semana 6 
+binario = input("digite o numero binario: ")
+
+total = binario.count('1') + binario.count('0')
+
+decimal = 0
+n = 1
+for i in range(total):
+    binario_num = int(binario[i])
+    decimal = decimal + (binario_num * (2** (total - n)))
+    i += 1
+    n += 1
+print(decimal)
             
