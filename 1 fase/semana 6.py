@@ -30,28 +30,49 @@
 # while t != 0:
 #     print(binario[t-1], end='')
 #     t -= 1
+# 
+# 
+# # Lista de Exercicio Tuplas e Listas:
+# 
+# # Inicialização  
+# lista = []
+# media = 0
+# melhor_nota = 0
+# menor_nota = 11
+# 
+# # Notas
+# for i in range(3):
+#     nota = float(input())
+#     lista.append(nota)
+#     media += nota
+# 
+# # Melhor e pior nota
+# melhor_nota = max(lista)
+# menor_nota = min(lista)
+# 
+# # Resultados
+# print(f"media = {media / 3:.2f}")   
+# print(f"melhor nota = {melhor_nota}")
+# print(f"menor nota = {menor_nota}")
+# print(f"diferença entre a maior e a menor nota = {melhor_nota - menor_nota}")
 
 
-# Lista de Exercicio Tuplas e Listas:
 
-# Inicialização  
+# # exercicio 2 # #
+
+# Ler os numeros e lista
+n = int(input("digite quantos numeros tera na lista: "))
 lista = []
-media = 0
-melhor_nota = 0
-menor_nota = 11
 
-# Notas
-for i in range(3):
-    nota = float(input())
-    lista.append(nota)
-    media += nota
-
-# Melhor e pior nota
-melhor_nota = max(lista)
-menor_nota = min(lista)
-
-# Resultados
-print(f"media = {media / 3:.2f}")   
-print(f"melhor nota = {melhor_nota}")
-print(f"menor nota = {menor_nota}")
-print(f"diferença entre a maior e a menor nota = {melhor_nota - menor_nota}")
+# listagem dos numeros
+for i in range(n):
+    numero = int(input("numero: "))
+    lista.append(numero)
+    
+# verificar se há repetidos
+print(lista)
+if len(lista) != len(set(lista)): # set() elimina duplicatas na lista
+    print("há valores repetidos na lista")
+else:
+    print("não há valores repetidos na lista")
+    
