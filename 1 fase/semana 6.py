@@ -115,3 +115,32 @@ for i in range(n):
 print(m)
     
 
+# # # exercicio 5 # # #
+
+x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+
+i = 0
+m = 19
+while i <= m:
+    u = x[m]
+    p = x[i]
+    del x[i]
+    del x[m - 1]
+    x.insert(i, u)
+    x.insert(m, p)
+    
+    i += 1
+    m -= 1
+
+print(x)
+
+
+# otimizacao do codigo (chat gpt)
+x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+
+# Loop até a metade da lista
+for i in range(len(x) // 2):
+    m = len(x) - 1 - i
+    x[i], x[m] = x[m], x[i]
+
+print(x)
