@@ -96,3 +96,42 @@ for i in range(10):
     else:
         X.append(n)
     print(f"X[{i}] = {X[i]}")
+
+
+# # # exercicio 6 # # # 
+tabuleiro = []
+n = int(input())
+n_bombas = 0
+for i in range(n):
+    bomba = int(input())
+    tabuleiro.append(bomba)
+if n == 1:
+    if bomba == 1:
+        print("1")
+    elif bomba == 0:
+        print("0")
+else:
+    for i in range(1):
+    
+        if tabuleiro[i] == 1:
+            n_bombas += 1
+        if tabuleiro[i+1] == 1:
+            n_bombas += 1
+        else:
+            n_bombas = n_bombas
+        print(n_bombas)
+    for i in range(1, n):
+        n_bombas = 0
+        if i+1 >= n:
+            if tabuleiro[i] == 1:
+                n_bombas += 1
+            if tabuleiro[i-1] == 1:
+                n_bombas += 1
+        else:
+            if tabuleiro[i] == 1:
+                n_bombas += 1
+            if tabuleiro[i+1] == 1:
+                n_bombas += 1
+            if tabuleiro[i-1] == 1:
+                n_bombas += 1  
+        print(n_bombas)
