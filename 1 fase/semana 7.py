@@ -21,3 +21,14 @@ else:
     print(f"o numero 3 nao aparece na lista")
 print(f"a lista contem os numero pares: {lista_par}")
 
+# # # exercicio 2 # # #
+lista = []
+
+for i in range(5):
+    n = int(input())
+    lista.append(n)
+print(lista)    
+print(f"maior numero: {max(lista)}", end=' ')
+print(f"menor numero: {min(lista)}")
+
+# # # exercicio 3 # # #
