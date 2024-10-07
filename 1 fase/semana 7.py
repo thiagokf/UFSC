@@ -66,3 +66,33 @@ for i in range(n):
             mais_perto = lista[i]
     resposta = lista.index(mais_perto)
     print(resposta + 1)
+
+
+# # # exercicio 5 # # #
+def verificar(i):
+    if i == 4:
+        print('Y')
+    else:
+        return False
+conector1 = [int(x) for x in input().strip().split(' ')]
+conector2 = [int(x) for x in input().strip().split(' ')]
+if True:
+    for i in range(5):
+        if conector1[i] == conector2[i]:
+            print('N')
+            break
+        else:
+            verificar(i)
+
+
+# # # exercicio 5 # # #
+X = []
+
+# colocando itens na lista
+for i in range(10):
+    n = int(input())
+    if n <= 0:
+        X.append(1)
+    else:
+        X.append(n)
+    print(f"X[{i}] = {X[i]}")
