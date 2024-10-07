@@ -2,7 +2,7 @@
 lista = []
 lista_par = []
 for i in range(5):
-    n = int(input("digite um numer para a lista: "))
+    n = int(input("digite um numero para a lista: "))
     lista.append(n)
     if n % 2 == 0:
         lista_par.append(n)
