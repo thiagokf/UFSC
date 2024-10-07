@@ -21,6 +21,7 @@ else:
     print(f"o numero 3 nao aparece na lista")
 print(f"a lista contem os numero pares: {lista_par}")
 
+
 # # # exercicio 2 # # #
 lista = []
 
@@ -31,4 +32,37 @@ print(lista)
 print(f"maior numero: {max(lista)}", end=' ')
 print(f"menor numero: {min(lista)}")
 
+
 # # # exercicio 3 # # #
+lista = []
+
+n = int(input("digite a quantidade de numeros para a lista: "))
+
+for i in range(n):
+    numero = int(input("numero: "))
+    lista.append(numero)
+
+print(lista)
+if len(lista) != len(set(lista)):
+    print("há numeros repetidos na lista")
+else:
+    print("não há numeros repetidos na lista")
+
+
+# # # exercicio 4 # # #
+n = int(input())
+lista = []
+for i in range(n):
+    mais_perto = 0
+    aux = 1000000
+    (alunos, numero) = map(int, input().split(' '))
+    lista = [int(x) for x in input().strip().split(' ')]
+    for i in range(alunos):
+        verificando = (numero - lista[i])
+        if verificando < 0:
+            verificando = verificando * -1
+        if verificando < aux:
+            aux = verificando
+            mais_perto = lista[i]
+    resposta = lista.index(mais_perto)
+    print(resposta + 1)
