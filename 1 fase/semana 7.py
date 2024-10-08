@@ -105,14 +105,15 @@ n_bombas = 0
 for i in range(n):
     bomba = int(input())
     tabuleiro.append(bomba)
+# quem CARALHOS joga campo minado com UMA CASA
 if n == 1:
     if bomba == 1:
         print("1")
     elif bomba == 0:
         print("0")
+# fazendo o jogo para pessoas normais
 else:
     for i in range(1):
-    
         if tabuleiro[i] == 1:
             n_bombas += 1
         if tabuleiro[i+1] == 1:
