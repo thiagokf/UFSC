@@ -31,6 +31,47 @@ while t != 0:
     print(binario[t-1], end='')
     t -= 1
 
+# # # complemento de 2 # # #
+decimal = int(input())
+bits = int(input())
+binario = []
+# for i in range(bits):
+#     binario.append(0)
+decimal2 = decimal
+if decimal < 0:
+    decimal = decimal * -1
+while decimal > 0:
+    d = decimal % 2
+    decimal = decimal // 2
+    binario.append(d)
+t = len(binario)
+zeros = bits - t
+# for i in range(zeros):
+#     del binario[i]
+for i in range(t):
+    binario[i], binario[t-1] = binario[t-1], binario[i]
+for i in range(zeros):
+    binario.insert(0, 0)
+
+# complemento de 1
+if decimal2 < 0:
+    for i in range(bits):
+        if binario[i] == 1:
+            binario[i] = 0
+        elif binario[i] == 0:
+            binario[i] = 1
+            
+# complemento de 2
+    bits -= 1
+    for i in range(bits):
+        if binario[bits] + 1 == 1:
+            binario[bits] += 1
+            break
+        else:
+            binario[bits] = 0
+        bits -= 1
+
+print(binario)
 
 # Lista de Exercicio Tuplas e Listas:
 
