@@ -35,8 +35,7 @@ while t != 0:
 decimal = int(input())
 bits = int(input())
 binario = []
-# for i in range(bits):
-#     binario.append(0)
+
 decimal2 = decimal
 if decimal < 0:
     decimal = decimal * -1
@@ -46,10 +45,11 @@ while decimal > 0:
     binario.append(d)
 t = len(binario)
 zeros = bits - t
-# for i in range(zeros):
-#     del binario[i]
+
+# revertendo a lista
 for i in range(t):
     binario[i], binario[t-1] = binario[t-1], binario[i]
+# colocando os 0 dos bits
 for i in range(zeros):
     binario.insert(0, 0)
 
