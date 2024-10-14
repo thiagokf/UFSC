@@ -135,4 +135,8 @@ else:
                 n_bombas += 1
             if tabuleiro[i-1] == 1:
                 n_bombas += 1  
+
         print(n_bombas)
+
+        print(n_bombas)
+
