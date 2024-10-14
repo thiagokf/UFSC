@@ -85,3 +85,49 @@ if a == 'M':
     op = op / tamanho
 print(op)
 
+
+
+# # # exercicio 4 # # # 
+conta0 = 0
+def resposta():
+    
+    for t in range(5):
+        if lista[0][t] == 0:
+            return t
+def verificando():
+    conta0 = 0
+    for c in range(5):
+        if lista[0][c] == 0:
+            conta0 += 1
+    return conta0
+
+i = 0
+while i != 1:
+    n = int(input())
+    if n == 0:
+        break
+    
+    for i in range(n):
+        lista = []
+        (a,b,c,d,e) = map(int, input().split(' '))
+        lista.append([a, b, c, d, e])
+        
+        for m in range(5):
+            if lista[0][m] > 127:
+                lista[0][m] = 225
+            else:
+                lista[0][m] = 0
+        if verificando() != 1:
+            print("*")
+            
+        else:
+            if resposta() == 0:
+                print("A")
+            elif resposta() == 1:
+                print("B")
+            elif resposta() == 2:
+                print("C")
+            elif resposta() == 3:
+                print("D")
+            elif resposta() == 4:
+                print("E")
