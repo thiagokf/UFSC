@@ -114,20 +114,69 @@ while i != 1:
         
         for m in range(5):
             if lista[0][m] > 127:
-                lista[0][m] = 225
+                lista[0][m] = 255
             else:
                 lista[0][m] = 0
         if verificando() != 1:
             print("*")
-            
+           
         else:
-            if resposta() == 0:
+            r = resposta()
+            if r == 0:
                 print("A")
-            elif resposta() == 1:
+            elif r == 1:
                 print("B")
-            elif resposta() == 2:
+            elif r == 2:
                 print("C")
-            elif resposta() == 3:
+            elif r == 3:
                 print("D")
-            elif resposta() == 4:
+            elif r == 4:
                 print("E")
+
+# # # lista 2 # # #
+
+ # # exercicio 1 # #
+n = int(input())
+votos = [int(x) for x in input().strip().split(' ')]
+
+satisfatorio = n - sum(votos)
+
+if satisfatorio > n/2:
+    print("Y")
+else:
+    print("N")
+
+
+ # # exercicio 2 # #
+n = int(input())
+
+for i in range(n):
+    lista = []
+    numero = int(input())
+    for p in range(1, numero):
+        div = numero % p
+        if div == 0:
+            lista.append(p)
+    if sum(lista) == numero:
+        print(f"{numero} eh perfeito")
+    else:
+        print(f"{numero} nao eh perfeito")
+
+
+ # # exercicio 3 # #
+import copy
+while True:
+    lista = []
+    n = int(input())
+    if n == 0:
+        break
+    lista = [int(x) for x in input().strip().split(' ')]
+    lista_nova = copy.deepcopy(lista)
+    lista_nova.sort()
+#     print(lista_nova)
+    numero_achado = lista_nova[-2]
+#     print(numero_achado)
+    index = lista.index(numero_achado)
+#     print(lista)
+#     print(index)
+    print(index + 1)
