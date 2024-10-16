@@ -180,3 +180,70 @@ while True:
 #     print(lista)
 #     print(index)
     print(index + 1)
+
+
+
+ # # exercicio 4 # # 
+# definindo as contagens
+m2 = 0
+m3 = 0
+m4 = 0
+m5 = 0
+
+# inputs
+n = int(input())
+
+lista = [int(x) for x in input().strip().split(' ')]
+
+# tirar os numeros nao desejados por n (inutil vtnc beecronwd)
+if len(lista) > n:
+    while len(lista) != n:      
+        del lista[n]
+# definir os multiplos
+else:
+    for i in range(n):
+        if lista[i] % 2 == 0:
+            m2 += 1
+        if lista[i] % 3 == 0:
+            m3 +=1
+        if lista[i] % 5 == 0:
+            m5 +=1
+        if lista[i] % 4 == 0:
+            m4 +=1
+
+# resultados
+print(lista)    
+print(f"{m2} Multiplo(s) de 2")
+print(f"{m3} Multiplo(s) de 3")
+print(f"{m4} Multiplo(s) de 4")
+print(f"{m5} Multiplo(s) de 5")
+
+
+
+ # # exercicio 5 (continuar) # #
+tamanho = int(input())
+matriz = []
+diag_prin = []
+matriz_par = []
+# montando a matriz
+for l in range(tamanho):
+    linha = []
+    for c in range(tamanho):
+        elemento = int(input(f"({l})({c}): "))
+        linha.append(elemento)
+        # diagonal principal
+        if c == l:
+            diag_prin.append(elemento)
+        # elemento par
+        if elemento % 2 == 0:
+            matriz_par.append(elemento)
+    matriz.append(linha)
+
+            
+for linha in matriz:
+    print(linha)
+print(diag_prin)
+# a) Mostre a soma de todos os elementos pares da matriz
+print(matriz_par)
+#  b) Mostre a média dos elementos da diagonal principa
+print(sum(diag_prin)/len(diag_prin))
