@@ -220,11 +220,14 @@ print(f"{m5} Multiplo(s) de 5")
 
 
 
- # # exercicio 5 (continuar) # #
+ # # exercicio 5 # #
 tamanho = int(input())
 matriz = []
 diag_prin = []
 matriz_par = []
+diag_sec = []
+triangulo = []
+ultima_coluna = []
 # montando a matriz
 for l in range(tamanho):
     linha = []
@@ -239,11 +242,53 @@ for l in range(tamanho):
             matriz_par.append(elemento)
     matriz.append(linha)
 
-            
+#diagonal secundaria
+tamanho1 = tamanho
+for i in range(tamanho1):
+    diag_sec.append(matriz[i][tamanho1-1])
+    tamanho1 -= 1
+# acima da diagonal principal
+p = 1
+t = 0
+tamanho2 = tamanho
+while t != tamanho2 - 1:
+    triangulo.append(matriz[t][p])
+    p += 1
+    if p == tamanho2:
+        t += 1
+        p -= 1
+        
+# soma ultima coluna
+for k in range(tamanho):
+    ultima_coluna.append(matriz[k][tamanho-1])
+
+# resultados
+print("Matriz")
 for linha in matriz:
     print(linha)
-print(diag_prin)
+
 # a) Mostre a soma de todos os elementos pares da matriz
+print("a)")
 print(matriz_par)
-#  b) Mostre a média dos elementos da diagonal principa
-print(sum(diag_prin)/len(diag_prin))
+print(f"soma = {sum(matriz_par)}")
+#  b) Mostre a média dos elementos da diagonal principal
+print("b)")
+print("diagonal princial")
+print(diag_prin)
+print(f"media = {sum(diag_prin)/len(diag_prin)}")
+# c) Mostre o produto dos elementos da diagonal secundária
+print("c)")
+print(diag_sec)
+# d) Mostre a média dos elementos acima da diagonal principal
+print("d)")
+print(triangulo)
+print(f"media = {sum(triangulo)/len(triangulo)}")
+# e) Mostre a soma dos elementos da última coluna da matriz
+print("e)")
+print(ultima_coluna)
+print(f"soma: {sum(ultima_coluna)}")
+# f) Mostre o menor valor da primeira linha da matriz
+
+print("f)")
+linha1 = matriz[0]
+print(f"menor valor da primeira linha: {min(linha1)}")
