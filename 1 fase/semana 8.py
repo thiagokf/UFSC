@@ -292,3 +292,52 @@ print(f"soma: {sum(ultima_coluna)}")
 print("f)")
 linha1 = matriz[0]
 print(f"menor valor da primeira linha: {min(linha1)}")
+
+
+
+ # # exercicio 6 # #
+import random
+print("--------------------------------")
+print("       JOGA NA MEGA SENA")
+print("--------------------------------")
+n = int(input('Quantos jogos voce quer que eu sorteie? '))
+print(f"-=-=-= SORTEANDO {n} JOGOS -=-=-=")
+
+jogos = []
+for i in range(n):
+    jogo = []
+    for p in range(6):
+        a = random.randint(1,60)
+        jogo.append(a)
+    jogos.append(jogo)
+c = 1
+for jogo in jogos:
+    print(f"Jogo {c}: {jogo}")
+    c += 1
+print("-=-=-=-=-= < BOA SORTE! > -=-=-=-=-=")
+
+
+
+ # # exercicio 7 # #
+n = int(input("numero de alunos: "))
+turma = []
+for i in range(n):
+    nota = []
+    aluno = []
+    nome = input("nome: ").lower()
+    nota = [int(x) for x in input("notas: ").strip().split(' ')]
+    media = sum(nota)/ 3
+    
+    aluno.append(nome)
+    aluno.append(nota)
+    aluno.append(media)
+    
+    turma.append(aluno)
+
+chamada = input("qual aluno quer chamar? ")
+for c in range(n):
+    if turma[c][0] == chamada:
+        print(turma[c])
+        
+    elif c == n -1:
+        print("esse aluno não foi cadastrado")
