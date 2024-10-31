@@ -1,4 +1,4 @@
-#semana 2
+# semana 2
 
 
 #Escreva um programa para aprovar o empréstimo bancário para compra de uma
