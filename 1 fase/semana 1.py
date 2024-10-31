@@ -1,4 +1,4 @@
-#EXERCICIO 1
+# eXERCICIO 1
 
 # funcionario = int(input())
 # num_horas = int(input())
