@@ -136,16 +136,16 @@ while True:
             'assinatura': assinatura
         }
         aluno1.append(aluno)
+       
         c = 0
-    for l in range(alunos_presentes):
-        if aluno1[l]['nome'] == turma[c]['nome']:
-            comp = 0
-            for s in range(len(aluno1[l]['nome'])):
-                if aluno1[l]['assinatura'][s] != turma[c]['assinatura'][s]:
-                    comp += 1
-            c += 1
-            
-            if comp >= 2:
-                ass_falsa += 1
-                
+    for c in range(alunos_presentes): 
+        for l in range(alunos_presentes):
+            if aluno1[c]['nome'] == turma[l]['nome']:
+                comp = 0
+                for s in range(len(aluno1[l]['nome'])):
+                    if aluno1[l]['assinatura'][s] != turma[c]['assinatura'][s]:
+                        comp += 1
+                        if comp >= 2:
+                            ass_falsa += 1
+                            break          
     print(ass_falsa)
