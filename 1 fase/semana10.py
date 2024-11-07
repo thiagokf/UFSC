@@ -136,3 +136,21 @@ while True:
         mis = 0
 
     print(sin)
+
+
+lista = [{'lingua':'brasil', 'fn':'Feliz Natal!'}, {'lingua':'alemanha', 'fn':'Frohliche Weihnachten!'}, {'lingua':'austria', 'fn':'Frohe Weihnacht!'}, {'lingua':'coreia', 'fn':'Chuk Sung Tan!'}, {'lingua':'espanha', 'fn':'Feliz Navidad!'}, {'lingua':'grecia', 'fn':'Kala Christougena!'}, {'lingua':'estados-unidos', 'fn':'Merry Christmas!'}, {'lingua':'inglaterra', 'fn':'Merry Christmas!'}, {'lingua':'australia', 'fn':'Merry Christmas!'}, {'lingua':'portugal', 'fn':'Feliz Natal!'}, {'lingua':'suecia', 'fn':'God Jul!'}, {'lingua':'turquia', 'fn':'Mutlu Noeller'}, {'lingua':'argentina', 'fn':'Feliz Navidad!'}, {'lingua':'chile', 'fn':'Feliz Navidad!'}, {'lingua':'mexico', 'fn':'Feliz Navidad!'}, {'lingua':'antardida', 'fn':'Merry Christmas!'}, {'lingua':'canada', 'fn':'Merry Christmas!'}, {'lingua':'irlanda', 'fn':'Nollaig Shona Dhuit!'}, {'lingua':'belgica', 'fn':'Zalig Kerstfeest!'}, {'lingua':'italia', 'fn':'Buon Natale!'}, {'lingua':'libia', 'fn':'Buon Natale!'}, {'lingua':'siria', 'fn':'Milad Mubarak!'}, {'lingua':'marrocos', 'fn':'Milad Mubarak!'}, {'lingua':'japao', 'fn':'Merii Kurisumasu!'}]
+
+
+while True:
+    try:
+        pais = input()
+
+        for x in range(len(lista) + 1):
+            if x == len(lista):
+                print('--- NOT FOUND ---')
+            elif pais == lista[x]['lingua']:
+                print(lista[x]['fn'])
+                break
+            
+    except EOFError:
+        break
