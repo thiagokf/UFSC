@@ -37,6 +37,17 @@ for c in tem_pet:
 
  # # # lista de exercicios # # # 
  # # exercicio 1 # #
+def soma():
+    som = 0
+    for qt in range(qnt_compra):
+            prod_compra, qntos_compra = input().split(' ')
+            qntos_compra = int(qntos_compra)   
+            for prod in produtos:
+                if prod['produto'] == prod_compra:
+                    som += prod['preco'] *  qntos_compra
+    return som
+
+
 qnt = int(input())
 for q in range(qnt):
     qnt_prod = int(input())
@@ -51,16 +62,7 @@ for q in range(qnt):
         produtos.append(prod_preco)
         
     qnt_compra = int(input())
-    soma = 0
-    for qt in range(qnt_compra):
-        prod_compra, qntos_compra = input().split(' ')
-        qntos_compra = int(qntos_compra)
-        
-        for prod in produtos:
-            if prod['produto'] == prod_compra:
-                soma += prod['preco'] *  qntos_compra
-#     print(produtos)
-    print(f"R$ {soma:.2f}")
+    print(f"R$ {soma():.2f}")
         
 # jeito de fazer soma : soma = sum(p['preco'] for p in produtos)
 
@@ -108,44 +110,29 @@ for p in range(qnt_pessoas):
 #     print()
 
 
-
-
-
-
+number = 1
 while True:
-    turma = []
-    num_alunos = int(input())
-    if num_alunos == 0:
-        break
-    for i in range(num_alunos):
-        nome, assinatura = input().split()
-        
-        alunos = {
-            'nome': nome,
-            'assinatura': assinatura
-        }
-        turma.append(alunos)
-    alunos_presentes = int(input())
-    
-    aluno1 = []
-    ass_falsa = 0
-    for p in range(alunos_presentes):
-        nome, assinatura = input().split()
-        aluno = {
-            'nome': nome,
-            'assinatura': assinatura
-        }
-        aluno1.append(aluno)
-       
-        c = 0
-    for c in range(alunos_presentes): 
-        for l in range(alunos_presentes):
-            if aluno1[c]['nome'] == turma[l]['nome']:
-                comp = 0
-                for s in range(len(aluno1[l]['nome'])):
-                    if aluno1[l]['assinatura'][s] != turma[c]['assinatura'][s]:
-                        comp += 1
-                        if comp >= 2:
-                            ass_falsa += 1
-                            break          
-    print(ass_falsa)
+    number = int(input(""))
+    if number == 0: break
+
+    dic = {}
+
+    for x in range(number):
+        entry_a = input().split()
+        dic[entry_a[0]] = entry_a[1]
+
+    students = int(input(""))
+    mis, sin = int(0), int(0)
+
+    for x in range(students):
+        count = int(0)
+        name_dic = input().split()
+        for y in dic[name_dic[0]]:
+            if y != name_dic[1][count]:
+                mis += 1
+            count += 1
+        if mis > 1: sin += 1
+
+        mis = 0
+
+    print(sin)
