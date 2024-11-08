@@ -110,32 +110,44 @@ for p in range(qnt_pessoas):
 #     print()
 
 
-number = 1
+def verificacao():
+    entry_a = input().split()
+    nome1 = entry_a[0]
+    assinatura1 = entry_a[1]
+    mis = 0
+    falsa = 0
+    if nome1 in aluno:
+        if assinatura1 != aluno[nome1]:
+            count = int(0)
+            for v in assinatura1:
+                if v != aluno[nome1][count]:
+                    mis += 1
+                count += 1
+            if mis >= 2:
+                falsa += 1
+            return falsa
+        else:
+            return 0
+            
 while True:
-    number = int(input(""))
-    if number == 0: break
+    lista = []
+    qnt = int(input())
+    if qnt == 0:
+        break
+    else:
+        aluno = {}
+        for i in range(qnt):
+            entry_a = input().split()
+            nome = entry_a[0]
+            assinatura = entry_a[1]
+            aluno[nome] = assinatura     
 
-    dic = {}
-
-    for x in range(number):
-        entry_a = input().split()
-        dic[entry_a[0]] = entry_a[1]
-
-    students = int(input(""))
-    mis, sin = int(0), int(0)
-
-    for x in range(students):
-        count = int(0)
-        name_dic = input().split()
-        for y in dic[name_dic[0]]:
-            if y != name_dic[1][count]:
-                mis += 1
-            count += 1
-        if mis > 1: sin += 1
-
-        mis = 0
-
-    print(sin)
+            lista.append(aluno)
+        ass_falsa = 0
+        qnt_presente = int(input())
+        for n in range(qnt_presente):
+            ass_falsa += verificacao()
+    print(ass_falsa)
 
 
 lista = [{'lingua':'brasil', 'fn':'Feliz Natal!'}, {'lingua':'alemanha', 'fn':'Frohliche Weihnachten!'}, {'lingua':'austria', 'fn':'Frohe Weihnacht!'}, {'lingua':'coreia', 'fn':'Chuk Sung Tan!'}, {'lingua':'espanha', 'fn':'Feliz Navidad!'}, {'lingua':'grecia', 'fn':'Kala Christougena!'}, {'lingua':'estados-unidos', 'fn':'Merry Christmas!'}, {'lingua':'inglaterra', 'fn':'Merry Christmas!'}, {'lingua':'australia', 'fn':'Merry Christmas!'}, {'lingua':'portugal', 'fn':'Feliz Natal!'}, {'lingua':'suecia', 'fn':'God Jul!'}, {'lingua':'turquia', 'fn':'Mutlu Noeller'}, {'lingua':'argentina', 'fn':'Feliz Navidad!'}, {'lingua':'chile', 'fn':'Feliz Navidad!'}, {'lingua':'mexico', 'fn':'Feliz Navidad!'}, {'lingua':'antardida', 'fn':'Merry Christmas!'}, {'lingua':'canada', 'fn':'Merry Christmas!'}, {'lingua':'irlanda', 'fn':'Nollaig Shona Dhuit!'}, {'lingua':'belgica', 'fn':'Zalig Kerstfeest!'}, {'lingua':'italia', 'fn':'Buon Natale!'}, {'lingua':'libia', 'fn':'Buon Natale!'}, {'lingua':'siria', 'fn':'Milad Mubarak!'}, {'lingua':'marrocos', 'fn':'Milad Mubarak!'}, {'lingua':'japao', 'fn':'Merii Kurisumasu!'}]
