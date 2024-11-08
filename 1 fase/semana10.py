@@ -166,3 +166,42 @@ while True:
             
     except EOFError:
         break
+
+
+
+def cadastros():
+    nome = input('nome: ')
+    ano = int(input('ano do nascimento: '))
+    cadastro = {
+        'nome': nome,
+        'ano': ano
+    }
+    carteira = int(input('tem carteira de trab?(0/1) '))
+    
+    if carteira != 0:
+        cadastro['ano_contratacao'] = int(input('ano contratacao: '))
+        cadastro['salario'] = int(input('salario: '))
+        cadastro['ano_aposentar'] = (cadastro['ano_contratacao'] + 35)
+        
+    return cadastro
+
+# cadastrando pessoas
+cadastrados = []
+while True:
+    cadastrados.append(cadastros())
+    c = input('continuar? (s/n)').lower()
+    if c == 'n':
+        break
+
+# procurando pessoas
+procura = input('quem voce quer procurar? ')
+
+if procura == 'todos':
+    for e in cadastrados:
+        for v in e.values():
+            print(v, end=' ')
+        print()
+else:
+    for s in range(len(cadastrados)):
+        if procura == cadastrados[s]['nome']: 
+            print(cadastrados[s])
