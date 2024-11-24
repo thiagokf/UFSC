@@ -15,13 +15,13 @@ class SistemaGeralUFSC:
             print(f'Nenhum aluno foi encontrado com a matrícula {matricula}\n')
             return None
         
-    def adicionarAluno(self, matricula, nome, ):
+    def adicionarAluno(self, matricula, nome, numeroFaltasPOO, numeroFaltasFMI):
         if (self.acharMatricula(matricula) != None):
             print('Já existe um aluno com essa matrícula. Cada aluno deve ter uma matrícula única.')
             return
         
-        self.alunos.append({'nome': nome, 'matricula': matricula})
-        
+        self.alunos.append({'nome': nome, 'matricula': matricula, 'numeroFaltasPOO': int(numeroFaltasPOO), 'numeroFaltasFMI': int(numeroFaltasFMI)})
+    
     def atualizarFichaAluno(self, matricula):
         aluno = self.acharMatricula(matricula)
         if (aluno == None):
@@ -29,11 +29,13 @@ class SistemaGeralUFSC:
         else:
             nome = input('Digite o nome do aluno: ')
             matricula = input('Digite a matricula do aluno: ')
-            numeroDeFaltas = int(input(f'Digite o número de faltas do aluno até hoje: '))
+            numeroFaltasPOO = int(input(f'Digite o número de faltas do aluno em POO até hoje: '))
+            numeroFaltasFMI = int(input(f'Digite o número de faltas do aluno em FMI até hoje: '))
             
             aluno['nome'] = nome
             aluno['matricula'] = matricula
-            aluno['numeroDeFaltas'] = int(numeroDeFaltas)
+            aluno['numeroFaltasPOO'] = int(numeroFaltasPOO)
+            aluno['numeroFaltasFMI'] = int(numeroFaltasFMI)
             achou = True
             
             print(f'A ficha de {nome} foi atualizada!')
@@ -62,10 +64,17 @@ class SistemaPOO(SistemaGeralUFSC):
     def __init__(self):
         super().__init__()
         self.creditosTotais = 102
+    def numeroAulasFaltaveis(self, numeroFaltasPOO):
+        numeroFaltasPOO = aluno['numeroFaltasPOO']
+        aulasFaltaveis = (self.creditosTotais * 0.25) - int(numeroFaltasPOO)
         
+        if (aulasFaltaveis < 0):
+            return 'Aluno já foi reprovado por frequência insuficiente'
+        
+        return f'{aulasFaltaveis} dias'    
     def porcentagemMaximaPossivel(self, numeroFaltasPOO):
-        
-        return (self.creditosTotais - numeroFaltasPOO) / self.creditosTotais
+        numeroFaltasPOO = aluno['numeroFaltasPOO']
+        return (self.creditosTotais - int(numeroFaltasPOO)) / self.creditosTotais
     
 class SistemaFMI(SistemaGeralUFSC):
     def __init__(self):
@@ -73,13 +82,14 @@ class SistemaFMI(SistemaGeralUFSC):
         self.creditosTotais = 72
         
     def numeroAulasFaltaveis(self, numeroFaltasFMI):
-        aulasFaltaveis = self.creditosTotais - numeroFaltasFMI
+        numeroFaltasFMI = aluno['numeroFaltasFMI']
+        aulasFaltaveis = self.creditosTotais - int(numeroFaltasFMI)
         
         return f'Você pode faltar {aulasFaltaveis} dias (todas as aulas), desde que sua média final não seja menor que 6, caso passar direto, ou menor do que 3, em caso de recuperação'
         
-    def porcentagemMaximaPossivel(self, numeroDeFaltas):
-        
-        return (self.creditosTotais - numeroDeFaltas) / self.creditosTotais
+    def porcentagemMaximaPossivel(self, numeroFaltasFMI):
+        numeroFaltasFMI = aluno['numeroFaltasFMI']
+        return (self.creditosTotais - int(numeroFaltasFMI)) / self.creditosTotais
     
 
 SistemaGeralUFSC = SistemaGeralUFSC()
@@ -92,10 +102,11 @@ while True:
         
         if (opcao == 1):
             nome = input('Digite o nome do aluno: ')
-#             numeroDeFaltas = input('Digite o número de faltas do aluno: ')
             matricula = input('Digite a matricula do aluno: ')
+            numeroFaltasPOO = input('Digite o número de faltas do aluno em POO: ')
+            numeroFaltasFMI = input('Digite o número de faltas do aluno em FMI: ')
             
-            SistemaGeralUFSC.adicionarAluno(matricula, nome)
+            SistemaGeralUFSC.adicionarAluno(matricula, nome, numeroFaltasFMI, numeroFaltasPOO)
             
         if (opcao == 2):
             matricula = input('Digite a matrícula do aluno que você quer buscar: \n')
@@ -123,12 +134,10 @@ while True:
                 print (f'Nenhum aluno foi encontrado com a matrícula {matricula}\n')
             
             elif (opcaoMateria == '1'):
-                numeroFaltasPOO = int(input('quantas aulas voce faltou de POO? '))
                 porcentagemMaximaPossivel = SistemaPOO.porcentagemMaximaPossivel(numeroFaltasPOO)*100
                 print(f'{porcentagemMaximaPossivel:.2f}%')
             
             elif (opcaoMateria == '2'):
-                numeroFaltasFMI = int(input('quantas aulas voce faltou de FMI? '))
                 porcentagemMaximaPossivel = SistemaFMI.porcentagemMaximaPossivel(numeroFaltasFMI)*100
                 print(f'{porcentagemMaximaPossivel:.2f}%')
             
@@ -147,12 +156,10 @@ while True:
                 print (f'Nenhum aluno foi encontrado com a matrícula {matricula}\n')
             
             elif (opcaoMateria == '1'):
-                numeroFaltasPOO = int(input('quantas aulas voce faltou de POO? '))
                 numeroAulasFaltaveis = SistemaPOO.numeroAulasFaltaveis(numeroFaltasPOO)
                 print(numeroAulasFaltaveis)
             
             elif (opcaoMateria == '2'):
-                numeroFaltasFMI = int(input('quantas aulas voce faltou de FMI? '))
                 numeroAulasFaltaveis = SistemaFMI.numeroAulasFaltaveis(numeroFaltasFMI)
                 print(numeroAulasFaltaveis)
             
