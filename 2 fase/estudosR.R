@@ -1,4 +1,4 @@
-dados = read.csv2("dados_salarios.csv")
+dados = read.csv2("dados_salarios.csv", fileEncoding = "UTF-8")
 # 1)
 sapply(dados[, c("experiencia", "emprego", "cargo", "salario_USD", "trab_remoto")], class)
 
@@ -9,7 +9,7 @@ base1 = dados[sample(nrow(dados), 350),]
 # 3)
 library(dplyr)
 base1$trab_remoto <- recode(base1$trab_remoto, '0' = "não", '50' = "parcial", '100' = "sim") 
-
+base1
 # 4)
 library(ggplot2)
 library(scales)
