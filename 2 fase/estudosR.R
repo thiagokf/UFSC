@@ -18,7 +18,7 @@ base1 %>%
   count(experiencia) %>%
   mutate(pct = n / sum(n)) %>%
   
-ggplot(aes(x = experiencia, y = pct)) +
+  ggplot(aes(x = experiencia, y = pct)) +
   geom_bar(stat = "identity", color = "red", fill = "black") +
   scale_y_continuous(labels = percent) + 
   labs(title = "Tipos de Experiência", x = "Experiência", y = "Porcentagem")
@@ -50,4 +50,19 @@ ggplot(base1, aes(x = salario_USD)) +
 
 # Com o grafico, é possível perceber que a maioria da amostra ganha menos de 200000, enquanto uma menor parte ganha mais que esse valor
 
-# 7)
+#7)
+ggplot(base1) +
+  aes(x = salario_USD, fill = trab_remoto) +
+  geom_density(linewidth = 0.5) +
+  scale_fill_manual(
+    values = c(não = "#24245F",
+               parcial = "#BA3853",
+               sim = "#FCFFA4")
+  ) +
+  labs(title = "Gráfico de densidade de Salario", x = "Salario", y = "Amostra") +
+  theme_minimal() +
+  theme(legend.position = "right")
+
+# Pelo gráfico, percebe-se que a parte parcial recebe menos que a parte
+# remota, que, por sua vez, recebe menos que uma pequena parte de quem não
+# trabalha remotamente.
