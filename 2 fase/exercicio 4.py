@@ -95,7 +95,7 @@ class Livro:
         self.__autores = [autor]
         self.__numero_capitulo = numero_capitulo
         self.__titulo_capitulo = titulo_capitulo
-        self.__capitulos = [Capitulo(numero_capitulo, titulo_capitulo)]
+        self.__capitulos = [numero_capitulo, titulo_capitulo]
 
     @property
     def codigo(self):
@@ -169,7 +169,24 @@ class Livro:
         return self.__capitulos
 
     def incluir_capitulo(self, numero_capitulo, titulo_capitulo):
-        return self.__capitulos.append(numero_capitulo, titulo_capitulo)
+        if not titulo_capitulo in self.__capitulos:
+            self.__capitulos.append(numero_capitulo)
+            self.__capitulos.append(titulo_capitulo)
+#             capit = {}
+#             capit['numero'] = numero_capitulo
+#             capit['titulo'] = titulo_capitulo
+#             self.__capitulos.append(capit)
+        else:
+            print('esse capitulo ja foi adicionado')
+            
+    def excluir_capitulo(self, titulo_capitulo):
+        if titulo_capitulo in self.__capitulos:
+            i = self.__capitulos.index(titulo_capitulo)
+            self.__capitulos.pop(i-1)
+            self.__capitulos.remove(titulo_capitulo)
+            
+    def find_capitulo_by_titulo(self, titulo_capitulo)
+            
 
 # >> cadastro das informaçoes: ok <<
 a1 = Autor(1, "Machado de Assis")
@@ -179,6 +196,16 @@ l1 = Livro(42, "Dom Casmurro", 2015,
 ed1, a1, 1, "Do Título")
 l2 = Livro(1, "Memórias Póstumas de Brás Cubas", 1958,
 ed1, a2, 1, "Do Título")
+
+l2.incluir_capitulo(1, 'oie')
+l2.incluir_capitulo(2, 'nicole')
+print(l2.capitulos)
+
+l1.incluir_capitulo(3,'niki')
+print(l1.capitulos)
+
+l2.excluir_capitulo('oie')
+print(l2.capitulos)
 
 # >> print e setters: ok <<
 # print(l1.codigo, l1.titulo, l1.ano,
@@ -200,16 +227,13 @@ ed1, a2, 1, "Do Título")
 #     print(autor.nome)
 
 
-biblio = Biblioteca()
-biblio.incluir_livro(l1)
-biblio.incluir_livro(l2)
-
-for livro in biblio.livros:
-    print(livro.titulo)
-    
-biblio.excluir_livro(l1)
-
-for livro in biblio.livros:
-    print(livro.titulo)
-
-
+# biblio = Biblioteca()
+# biblio.incluir_livro(l1)
+# biblio.incluir_livro(l2)
+# 
+# for livro in biblio.livros:
+#     print(livro.titulo)
+# 
+# 
+# for livro in biblio.livros:
+#     print(livro.titulo)
