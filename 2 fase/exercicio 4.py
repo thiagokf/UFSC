@@ -63,27 +63,27 @@ class Editora:
             self.__codigo = codigo
 
 class Capitulo:
-    def __init__(self, numero_capitulo, titulo_capitulo):
-        self.__titulo_capitulo = titulo_capitulo
-        self.__numero_capitulo = numero_capitulo
+    def __init__(self, numero, titulo):
+        self.__titulo = titulo
+        self.__numero = numero
 
     @property
-    def titulo_capitulo(self):
-        return self.__titulo_capitulo
+    def titulo(self):
+        return self.__titulo
     
-    @titulo_capitulo.setter
-    def titulo_capitulo(self, titulo_capitulo):
-        if isinstance(titulo_capitulo, str):
-            self.__titulo_capitulo = titulo_capitulo
+    @titulo.setter
+    def titulo(self, titulo):
+        if isinstance(titulo, str):
+            self.__titulo = titulo
 
     @property
-    def numero_capitulo(self):
-        return self.__numero_capitulo
+    def numero(self):
+        return self.__numero
     
-    @numero_capitulo.setter
-    def numero_capitulo(self, numero_capitulo):
-        if isinstance(numero_capitulo, int):
-            self.__numero_capitulo = numero_capitulo
+    @numero.setter
+    def numero(self, numero):
+        if isinstance(numero, int):
+            self.__numero = numero
 
 
 class Livro:
@@ -95,7 +95,7 @@ class Livro:
         self.__autores = [autor]
         self.__numero_capitulo = numero_capitulo
         self.__titulo_capitulo = titulo_capitulo
-        self.__capitulos = [numero_capitulo, titulo_capitulo]
+        self.__capitulos = [Capitulo(numero_capitulo, titulo_capitulo)]
 
     @property
     def codigo(self):
@@ -168,10 +168,11 @@ class Livro:
     def capitulos(self):
         return self.__capitulos
 
-    def incluir_capitulo(self, numero_capitulo, titulo_capitulo):
-        if not titulo_capitulo in self.__capitulos:
-            self.__capitulos.append(numero_capitulo)
-            self.__capitulos.append(titulo_capitulo)
+    def incluir_capitulo(self, Capitulo):
+        if not Capitulo in self.__capitulos:
+            titulo_capitulo = Capitulo.titulo
+            numero_capitulo = Capitulo.numero
+            self.__capitulos.append(Capitulo)           
 #             capit = {}
 #             capit['numero'] = numero_capitulo
 #             capit['titulo'] = titulo_capitulo
@@ -185,7 +186,8 @@ class Livro:
             self.__capitulos.pop(i-1)
             self.__capitulos.remove(titulo_capitulo)
             
-    def find_capitulo_by_titulo(self, titulo_capitulo)
+   # def find_capitulo_by_titulo(self, titulo_capitulo):
+        
             
 
 # >> cadastro das informaçoes: ok <<
@@ -197,15 +199,20 @@ ed1, a1, 1, "Do Título")
 l2 = Livro(1, "Memórias Póstumas de Brás Cubas", 1958,
 ed1, a2, 1, "Do Título")
 
-l2.incluir_capitulo(1, 'oie')
-l2.incluir_capitulo(2, 'nicole')
-print(l2.capitulos)
+c1 = Capitulo(1, 'oie')
+c2 = Capitulo(2, 'tchau')
+l2.incluir_capitulo(c1)
+l2.incluir_capitulo(c2)
 
-l1.incluir_capitulo(3,'niki')
-print(l1.capitulos)
-
-l2.excluir_capitulo('oie')
+# l2.incluir_capitulo()
 print(l2.capitulos)
+for i in range(3):
+    print(l2.capitulos[i].titulo)
+# l1.incluir_capitulo()
+# print(l1.capitulos)
+# 
+# l2.excluir_capitulo()
+# print(l2.capitulos)
 
 # >> print e setters: ok <<
 # print(l1.codigo, l1.titulo, l1.ano,
@@ -237,3 +244,4 @@ print(l2.capitulos)
 # 
 # for livro in biblio.livros:
 #     print(livro.titulo)
+
