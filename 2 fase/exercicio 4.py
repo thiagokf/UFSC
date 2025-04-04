@@ -173,20 +173,21 @@ class Livro:
             titulo_capitulo = Capitulo.titulo
             numero_capitulo = Capitulo.numero
             self.__capitulos.append(Capitulo)           
-#             capit = {}
-#             capit['numero'] = numero_capitulo
-#             capit['titulo'] = titulo_capitulo
-#             self.__capitulos.append(capit)
+
         else:
             print('esse capitulo ja foi adicionado')
             
     def excluir_capitulo(self, titulo_capitulo):
-        if titulo_capitulo in self.__capitulos:
-            i = self.__capitulos.index(titulo_capitulo)
-            self.__capitulos.pop(i-1)
-            self.__capitulos.remove(titulo_capitulo)
+        for i in range(len(self.__capitulos)):
+            if titulo_capitulo == self.__capitulos[i].titulo:
+                return self.__capitulos.pop(i)
+        print('deu boga')
             
-   # def find_capitulo_by_titulo(self, titulo_capitulo):
+    def find_capitulo_by_titulo(self, titulo_capitulo):
+        for i in range(len(self.__capitulos)):
+            if titulo_capitulo == self.__capitulos[i].titulo:
+                return self.__capitulos[i]
+
         
             
 
@@ -204,10 +205,19 @@ c2 = Capitulo(2, 'tchau')
 l2.incluir_capitulo(c1)
 l2.incluir_capitulo(c2)
 
+
+# >>> encontrar capitulo pelo nome: OK <<<
+#print(l2.find_capitulo_by_titulo('tchau').titulo)
+
+# >>> incluir e excluir capitulo: OK <<<
+#print(l2.capitulos)
 # l2.incluir_capitulo()
-print(l2.capitulos)
-for i in range(3):
-    print(l2.capitulos[i].titulo)
+#l2.excluir_capitulo('oie')
+
+#print(l2.capitulos)
+
+#for i in range(2):
+#    print(l2.capitulos[i].titulo)
 # l1.incluir_capitulo()
 # print(l1.capitulos)
 # 
@@ -229,9 +239,12 @@ for i in range(3):
 
 
 # >> inclusão de autores: ok <<
-# l1.incluir_autor(a2)
-# for autor in l1.autores:
-#     print(autor.nome)
+#a3 = Autor(1, 'tiagao')
+#l1.incluir_autor(a2)
+#l1.incluir_autor(a3)
+#for autor in l1.autores:
+#    print(autor.nome)
+#    print(autor)
 
 
 # biblio = Biblioteca()
@@ -243,5 +256,4 @@ for i in range(3):
 # 
 # 
 # for livro in biblio.livros:
-#     print(livro.titulo)
-
+#     print(livro.titul
