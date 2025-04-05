@@ -2,13 +2,16 @@ class Biblioteca:
     def __init__(self):
         self.__livros = []
         
-    def incluir_livro(self, Livro):
-        if Livro not in self.__livros:
-            self.__livros.append(Livro)
+    def incluir_livro(self, livro):
+        if isinstance(livro, Livro):
+            for i in self.__livros:
+                if i.codigo == livro.codigo:
+                    return 'deu boga'
+            self.__livros.append(livro)
 
-    def excluir_livro(self, Livro):
-        if Livro in self.__livros:
-            self.__livros.remove(Livro)
+    def excluir_livro(self, livro):
+        for i in self.__livros:
+            self.__livros.remove(livro)
         
     @property
     def livros(self):
@@ -149,17 +152,22 @@ class Livro:
     @editora.setter
     def editora(self, editora):
         if isinstance(editora, Editora):
-            self.__editora = editora
-    
+            self.__editora = editora 
     @property
     def autores(self):
-        return self.__autores
+        if isinstance(autor, Autor):
+            return self.__autores
         
     def incluir_autor(self, autor):
-        if autor.nome in self.__autores:
-            print('esse autor ja foi incluido')
-        else:
-            self.__autores.append(autor)
+        aux = 0
+        if isinstance(autor, Autor):
+            for i in range(len(self.__autores)):
+                if autor.nome == self.__autores[i].nome and autor.codigo == self.__autores[i].codigo:
+                    aux += 1
+                if aux == 1:
+                    return print('deu merda')
+                    
+                self.__autores.append(autor)
             #add o objeto autor (add nome = autor.nome)
     def excluir_autor(self, autor):
         self.__autores.remove(autor)
@@ -168,20 +176,24 @@ class Livro:
     def capitulos(self):
         return self.__capitulos
 
-    def incluir_capitulo(self, Capitulo):
-        if not Capitulo in self.__capitulos:
-            titulo_capitulo = Capitulo.titulo
-            numero_capitulo = Capitulo.numero
-            self.__capitulos.append(Capitulo)           
+    def incluir_capitulo(self, numero_capitulo, titulo_capitulo):
+        aux = 0
+        for i in range(len(self.__capitulos)):
+            if titulo_capitulo == self.__capitulos[i].titulo and numero_capitulo == self.capitulos[i].numero:          
+                aux += 1
+            if aux == 1:
+                return 'esse capitulo ja foi adicionado'
+                
+        cap = Capitulo(numero_capitulo,titulo_capitulo)
+        self.__capitulos.append(cap)
 
-        else:
-            print('esse capitulo ja foi adicionado')
+        
             
     def excluir_capitulo(self, titulo_capitulo):
         for i in range(len(self.__capitulos)):
             if titulo_capitulo == self.__capitulos[i].titulo:
                 return self.__capitulos.pop(i)
-        print('deu boga')
+        
             
     def find_capitulo_by_titulo(self, titulo_capitulo):
         for i in range(len(self.__capitulos)):
@@ -194,18 +206,20 @@ class Livro:
 # >> cadastro das informaçoes: ok <<
 a1 = Autor(1, "Machado de Assis")
 a2 = Autor(2, "Ariano Suassuna")
+a3 = Autor(1,"Machado de Assis")
 ed1 = Editora(1, "Via Leitura")
 l1 = Livro(42, "Dom Casmurro", 2015,
 ed1, a1, 1, "Do Título")
 l2 = Livro(1, "Memórias Póstumas de Brás Cubas", 1958,
 ed1, a2, 1, "Do Título")
 
-c1 = Capitulo(1, 'oie')
-c2 = Capitulo(2, 'tchau')
-l2.incluir_capitulo(c1)
-l2.incluir_capitulo(c2)
+# l2.incluir_capitulo(1, 'oi')
+# l2.incluir_capitulo(1, 'oi')
+# 
+# print(l2.capitulos)
 
-
+# l1.incluir_autor(a3)
+# print(l1.autores)
 # >>> encontrar capitulo pelo nome: OK <<<
 #print(l2.find_capitulo_by_titulo('tchau').titulo)
 
@@ -247,12 +261,18 @@ l2.incluir_capitulo(c2)
 #    print(autor)
 
 
-# biblio = Biblioteca()
-# biblio.incluir_livro(l1)
-# biblio.incluir_livro(l2)
+biblio = Biblioteca()
+biblio.incluir_livro(l1)
+biblio.incluir_livro(l2)
 # 
-# for livro in biblio.livros:
-#     print(livro.titulo)
+for livro in biblio.livros:
+    print(livro.titulo)
+
+biblio.excluir_livro(l2)
+
+for livro in biblio.livros:
+    print(livro.titulo)
+
 # 
 # 
 # for livro in biblio.livros:
