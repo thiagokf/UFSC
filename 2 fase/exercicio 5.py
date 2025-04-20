@@ -305,7 +305,25 @@ class AbstractControladorChamados(ABC):
     def tipos_chamados(self):
         pass
 
-
+class ControladorChamados(AbstractControladorChamados):
+    def __init__(self):
+        self.tipoChamados = [Chamado]
+        
+    def total_chamados_por_tipo(self, tipo: TipoChamado):
+        return len(tipo.chamados)
+    
+    def inclui_chamado(self, data: Date, cliente: Cliente, tecnico: Tecnico, titulo: str, descricao: str, prioridade: int, tipo: TipoChamado) -> Chamado:
+        c = Chamado(data, cliente, tecnico, titulo, descricao, prioridade, tipo)
+        tipo.chamados.append(c)
+        return c
+    
+    def inclui_tipochamado(self, codigo: int, nome: str, descricao: str):
+        t = TipoChamado(codigo, descricao, nome)
+        return t
+    
+    def tipos_chamados(self):
+        return self.tipoChamados
+        
 # # teste # #
 tc = TipoChamado(1,1,"Bug")
 print(tc.codigo,tc.descricao,tc.nome) # 1 1 Bug
