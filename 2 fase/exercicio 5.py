@@ -87,6 +87,7 @@ class TipoChamado(AbstractTipoChamado):
         self.__codigo = codigo
         self.__descricao = descricao
         self.__nome = nome
+        self.__chamados = []
 
     @property
     def codigo(self):
@@ -111,6 +112,10 @@ class TipoChamado(AbstractTipoChamado):
     @nome.setter
     def nome(self, nome):
         self.__nome == nome
+
+    @property
+    def chamados(self):
+        return self.__chamados
         
 class AbstractChamado(ABC):
     @property
