@@ -1,20 +1,3 @@
-# # a fazer
-from abstractControladorChamados import AbstractControladorChamados
-from tipoChamado import TipoChamado
-from chamado import Chamado
-from datetime import date as Date
-from cliente import Cliente
-from tecnico import Tecnico
-from collections import defaultdict
-class ControladorChamados(AbstractControladorChamados):
-    
-        
-    def total_chamados_por_tipo(self, tipo: TipoChamado) -> int:
-        return sum(1 for chamado in self.__chamados if chamado.tipo.codigo == tipo.codigo)
-
-
-# # feito
-
 from abc import ABC, abstractmethod, abstractproperty
 from datetime import date as Date
 
@@ -42,15 +25,15 @@ class Pessoa(AbstractPessoa, ABC):
     @property
     def nome(self):
         return self.__nome
-    
+
     @nome.setter
     def nome(self, nome):
         self.__nome = nome
-    
+
     @property
     def codigo(self):
         return self.__codigo
-    
+
     @codigo.setter
     def codigo(self, codigo):
         self.__codigo = codigo
@@ -87,35 +70,31 @@ class TipoChamado(AbstractTipoChamado):
         self.__codigo = codigo
         self.__descricao = descricao
         self.__nome = nome
-        self.__chamados = []
 
     @property
     def codigo(self):
         return self.__codigo
-    
+
     @codigo.setter
-    def codigo(self, codigo):
+    def codigo(self, codigo: int):
         self.__codigo = codigo
-    
+
     @property
     def descricao(self):
         return self.__descricao
-    
+
     @descricao.setter
-    def descricao(self, descricao):
-        self.__descricao == descricao
+    def descricao(self, descricao: str):
+        self.__descricao = descricao
 
     @property
     def nome(self):
         return self.__nome
-    
-    @nome.setter
-    def nome(self, nome):
-        self.__nome == nome
 
-    @property
-    def chamados(self):
-        return self.__chamados
+    @nome.setter
+    def nome(self, nome: str):
+        self.__nome = nome
+
         
 class AbstractChamado(ABC):
     @property
@@ -155,60 +134,53 @@ class AbstractChamado(ABC):
     
 class Chamado(AbstractChamado):
     def __init__(self, data: Date, cliente: Cliente, tecnico: Tecnico, titulo: str, descricao: str, prioridade: int, tipo: TipoChamado):
-        self.__data = Date
-        self.__cliente = Cliente
-        self.__tecnico = Tecnico
+        self.__data = data
+        self.__cliente = cliente
+        self.__tecnico = tecnico
         self.__titulo = titulo
         self.__descricao = descricao
         self.__prioridade = prioridade
-        self.__tipo = TipoChamado
-    
+        self.__tipo = tipo
+
     @property
     def data(self):
-        if isinstance(data, Date):
-            return self.__data
-    
+        return self.__data
+
     @property
     def cliente(self):
-        if isinstance(cliente, Cliente):
-            return self.__cliente
-        
+        return self.__cliente
+
     @property
     def tecnico(self):
-        if isinstance(tecnico, Tecnico):
-            return self.__tecnico    
-        
+        return self.__tecnico
+
     @property
     def titulo(self):
-        if isinstance(titulo, str):
-            return self.__titulo
+        return self.__titulo
 
     @titulo.setter
     def titulo(self, titulo):
         self.__titulo = titulo
-        
+
     @property
     def descricao(self):
-        if isinstance(descricao, str):
-            return self.__descricao
-        
+        return self.__descricao
+
     @descricao.setter
-    def titulo(self, descricao):
+    def descricao(self, descricao):
         self.__descricao = descricao
-        
+
     @property
     def prioridade(self):
-        if isinstance(prioridade, int):
-            return self.__prioridade
-    
+        return self.__prioridade
+
     @prioridade.setter
-    def titulo(self, prioridade):
+    def prioridade(self, prioridade):
         self.__prioridade = prioridade
-        
+
     @property
     def tipo(self):
-        if isinstance(tipo, TipoChamado):
-            return self.__tipo
+        return self.__tipo
 
 class AbstractControladorPessoas(ABC):
     # @return retorna a lista de clientes
@@ -247,27 +219,28 @@ class ControladorPessoas(AbstractControladorPessoas):
     @property
     def clientes(self):
         return self.__clientes
-    
+
     @property
     def tecnicos(self):
         return self.__tecnicos
-    
-    def incluir_cliente(self, nome: str, codigo: int):
+
+    def inclui_cliente(self, codigo: int, nome: str):
         c = Cliente(nome, codigo)
         for i in self.__clientes:
-            if c.nome == i.nome and c.codigo == i.codigo:
+            if c.codigo == i.codigo:
                 print('esse cliente ja foi adicionado')
-            else:
-                self.__clientes.append(c)
-    
-    def incluir_tecnico(self, nome: str, codigo: int):
+                return
+        self.__clientes.append(c)
+        return c
+
+    def inclui_tecnico(self, codigo: int, nome: str):
         t = Tecnico(nome, codigo)
-        for i in self.__clientes:
-            if t.nome == i.nome and t.codigo == i.codigo:
-                print('esse cliente ja foi adicionado')
-            else:
-                self.__tecnicos.append(t)
-        return self.__tecnicos
+        for i in self.__tecnicos:
+            if t.codigo == i.codigo:
+                print('esse tecnico ja foi adicionado')
+                return
+        self.__tecnicos.append(t)
+        return t
     
 class AbstractControladorChamados(ABC):
     # Retorna o total de chamados registrados para o TipoChamado recebido como parametro
@@ -307,20 +280,46 @@ class AbstractControladorChamados(ABC):
 
 class ControladorChamados(AbstractControladorChamados):
     def __init__(self):
-        self.tipoChamados = [Chamado]
-        
+        self.tipoChamados = []
+        self.__chamados = []
+
     def total_chamados_por_tipo(self, tipo: TipoChamado):
-        return len(tipo.chamados)
-    
-    def inclui_chamado(self, data: Date, cliente: Cliente, tecnico: Tecnico, titulo: str, descricao: str, prioridade: int, tipo: TipoChamado) -> Chamado:
-        c = Chamado(data, cliente, tecnico, titulo, descricao, prioridade, tipo)
-        tipo.chamados.append(c)
+        c = 0
+        for chamado in self.__chamados:
+            if chamado.tipo.codigo == tipo.codigo:
+                c += 1
         return c
-    
+
+    def inclui_chamado(self, data: Date, cliente: Cliente, tecnico: Tecnico, titulo: str, descricao: str, prioridade: int, tipo: TipoChamado):
+        rep = False
+        invalida = False
+        for chamado in self.__chamados:
+            if chamado.data != data:
+                continue
+            if chamado.cliente.codigo != cliente.codigo:
+                continue
+            if chamado.tecnico.codigo != tecnico.codigo:
+                continue
+            if chamado.tipo.codigo != tipo.codigo:
+                continue
+            rep = True
+        if not isinstance(tipo, TipoChamado) or not isinstance(tecnico, Tecnico) or not isinstance(cliente, Cliente):
+            invalida = True
+        if not rep and not invalida:
+            chamado1 = Chamado(data, cliente, tecnico, titulo, descricao, prioridade, tipo)
+            self.__chamados.append(chamado1)
+            return chamado1
+
     def inclui_tipochamado(self, codigo: int, nome: str, descricao: str):
+        for i in self.tipoChamados:
+            if i.codigo == codigo:
+                print('tipo ja adicionado')
+                return
         t = TipoChamado(codigo, descricao, nome)
+        self.tipoChamados.append(t)
         return t
-    
+
+    @property
     def tipos_chamados(self):
         return self.tipoChamados
         
