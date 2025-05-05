@@ -1,37 +1,31 @@
-from AbstractPersonagem import *
+from AbstractMesa import *
+from Carta import *
 
 
-class Personagem(AbstractPersonagem):
-    #Construtor fornecido, nao deve ser alterado
-    def __init__(self, energia: int, habilidade: int,
-                 velocidade: int, resistencia: int, tipo: Tipo):
-        self.__tipo = tipo
-        self.__energia = energia
-        self.__habilidade = habilidade
-        self.__velocidade = velocidade
-        self.__resistencia = resistencia
-
-    @property
-    def tipo(self) -> Tipo:
-        if isinstance(self.__tipo, Tipo):
-            return self.__tipo
+class Mesa(AbstractMesa):
+    def __init__(self, jogador1: Jogador, jogador2: Jogador,
+                 cartaJogador1: Carta, cartaJogador2: Carta):
+        self.__jogador1 = jogador1
+        self.__jogador2 = jogador2
+        self.__cartaJogador1 = cartaJogador1
+        self.__cartaJogador2 = cartaJogador2
 
     @property
-    def energia(self) -> int:
-        if isinstance(self.__energia,  int):
-            return self.__energia
+    def jogador1(self) -> Jogador:
+        if isinstance(self.__jogador1, Jogador):
+            return self.__jogador1
 
     @property
-    def habilidade(self) -> int:
-        if isinstance(self.__habilidade,  int):
-            return self.__habilidade
+    def jogador2(self) -> Jogador:
+        if isinstance(self.__jogador2, Jogador):
+            return self.__jogador2
 
     @property
-    def velocidade(self) -> int:
-        if isinstance(self.__velociade,  int):
-            return self.__velocidade
+    def carta_jogador1(self) -> Carta:
+        if isinstance(self.__cartaJogador1, Carta):
+            return self.__cartaJogador1
 
     @property
-    def resistencia(self) -> int:
-        if isinstance(self.__resistencia,  int):
-            return self.__resistencia
+    def carta_jogador2(self) -> Carta:
+        if isinstance(self.__cartaJogador2, Carta):
+            return self.__cartaJogador2
