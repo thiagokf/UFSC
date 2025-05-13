@@ -15,37 +15,28 @@ class Elevador(AbstractElevador):
 
     # elevadorJahNoTerreo    
     def descer(self):
-        try:
-            aux = self.__andar_atual - 1
-            if aux < 0:
-                self.__andar_atual = aux
-
-        except ElevadorJahNoTerreoException as e:
-            print(e)
+        if self.__andar_atual - 1 < 0:
+            raise elevadorJahNoTerreoException()
+        self.__andar_atual - 1
 
     # elevadorCheio    
     def entra_pessoa(self):
-        try:
-            aux = self.__pessoas_no_elevador + 1
-            if aux < self.__capacidade:
-                self.__pessoas_no_elevador = aux
+        if self.__pessoas_no_elevador + 1 > self.__capacidade:
+            raise elevadorCheioException()
+        self.__pessoas_no_elevador + 1
         
-        except ElevadorCheioException as e:
-            print(e)
-
     # elevadorVazio
     def sai_pessoa(self) -> str:
         if self.__pessoas_no_elevador - 1 < 0:
             raise ElevadorJahVazioException()
-        
         self.__pessoas_no_elevador - 1
-    
+        
     # elevador ja no maximo
     def subir(self) -> str:
         if self.__andar_atual + 1 > self.__total_andares_predio:
             raise ElevadorJahNoUltimoAndarException()
-
         self.__andar_atual += 1
+        
     @property
     def capacidade(self) -> int:
         if isinstance(self.__capacidade, int)
