@@ -16,13 +16,13 @@ class Elevador(AbstractElevador):
     # elevadorJahNoTerreo    
     def descer(self):
         if self.__andar_atual - 1 < 0:
-            raise elevadorJahNoTerreoException()
+            raise ElevadorJahNoTerreoException()
         self.__andar_atual - 1
 
     # elevadorCheio    
     def entra_pessoa(self):
         if self.__pessoas_no_elevador + 1 > self.__capacidade:
-            raise elevadorCheioException()
+            raise ElevadorCheioException()
         self.__pessoas_no_elevador + 1
         
     # elevadorVazio
