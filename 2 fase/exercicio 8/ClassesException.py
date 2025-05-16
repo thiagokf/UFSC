@@ -17,3 +17,8 @@ class ElevadorCheioException(Exception):
     def __init__(self):
         self.mensagem = "o elevador esta cheio!!!"
         super().__init__(self.mensagem)
+
+class ComandoInvalidoException(Exception):
+    def __init__(self):
+        self.mensagem = "comando invalido"
+        super().__init__(self.mensagem)
