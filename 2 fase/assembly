@@ -1,0 +1,25 @@
+exercicio 1:
+
+((x+300) – y) + z + 27 + x 
+x = $s0, y = $s1, z = $s2
+
+
+add $t0, 27, $s2      
+add $t0, $t0, $s0    #t0 = z + 27 + x 
+
+
+add $t1, $s0, 300
+sub $t1, $t1, $s1    #t1 = ((x+300) – y)
+
+add $t3, $t1, $t0
+
+
+exercicio 2:
+
+s = (a & b) | (!a & c)
+$t0 = a, $t1 = c, $t2, c
+
+and $t4, $t0, $t1            #$t4 = a & b
+nor $t5, $t0, $t0            #$t5 = !a
+and $t6, $t5, $t2           #$t6 = !a & c
+or $t7, $t6, $t4              #$t7 = (a & b) | (!a & c)
