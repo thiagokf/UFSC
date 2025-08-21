@@ -54,28 +54,45 @@ class Fila:
         else:
             print ("fila cheia")
     def sair(self):
-        self.__fila[self.__inicio] = None
-        self.__inicio += 1
-        if self.__inicio == self.__tamanho:
-            self.__inicio = 0
-    
+        if self.__fila[self.__inicio] == None:
+            print("lista vazia jão")
+            return
+        else:
+            self.__fila[self.__inicio] = None
+            self.__inicio += 1
+            if self.__inicio == self.__tamanho:
+                self.__inicio = 0
+
     def frente(self):
         return self.__fila[self.__inicio]
     
 f = Fila(5)
-print(f.fila)
+# tentando tirar lista vazia (ok!)
+f.sair()
+# fazendo a fila (ok!)
 f.entrar(2)
 print(f.fila)
-
 f.entrar(3)
 f.entrar(7)
 f.entrar(55)
 f.entrar(5)
 print(f.fila)
+
+# tentando adicionar na fila cheia (ok!)
+f.entrar(5)
+
+# saindo da fila (ok!)
 f.sair()
+print(f.fila)
+
+# adicionando (ok!)
 f.entrar(4)
 print(f.fila)
+
+# verificando se a frente ta certa (ok!)
 print(f.frente())
+
+# outros testes
 f.sair()
 print(f.fila)
 f.entrar(0)
