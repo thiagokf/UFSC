@@ -53,6 +53,7 @@ class Fila:
                 self.__fim = 0
         else:
             print ("fila cheia")
+            
     def sair(self):
         if self.__fila[self.__inicio] == None:
             print("lista vazia jão")
@@ -64,11 +65,15 @@ class Fila:
                 self.__inicio = 0
 
     def frente(self):
+        if self.__fila[self.__inicio] == None:
+            print("lista vazia jão")
+            return
         return self.__fila[self.__inicio]
     
 f = Fila(5)
 # tentando tirar lista vazia (ok!)
 f.sair()
+f.frente()
 # fazendo a fila (ok!)
 f.entrar(2)
 print(f.fila)
