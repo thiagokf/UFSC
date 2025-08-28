@@ -1,4 +1,4 @@
-class elemento:
+class Elemento:
     def __init__(self, valor):
             self.__valor = valor
             self.__ant = None
@@ -28,7 +28,7 @@ class Pilha:
         return self.__topo
     
     def push(self, valor):
-        novo = elemento(valor)
+        novo = Elemento(valor)
         if self.__topo == None:
             self.__topo = novo
             return
@@ -47,9 +47,9 @@ class Pilha:
 
 
 p = Pilha()
-e = elemento("bola")
+e = Elemento("bola")
 print(e.ant)
-# testando adicionando os elementos (OK!)
+# testando adicionando os Elementos (OK!)
 p.push("bolinha")
 p.push("quadrado")
 p.push("triangulo")
@@ -57,7 +57,7 @@ print(p.topo.valor)
 print(p.topo.ant.valor)
 print(p.topo.ant.ant.valor)
 
-# teste popando os elementos (OK!)
+# teste popando os Elementos (OK!)
 print("----------------------------------------")
 p.pop()
 print(p.topo.valor)
